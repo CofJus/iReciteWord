@@ -2,4 +2,7 @@
     <string name="app_name">iReciteWord</string>
     <string name="start">start</string>
     <string name="stop">stop</string>
+    <string name="play_the_voice">Play the voice</string>
+    <string name="Translate" />
+    <string name="Sentence" />
 </resources>

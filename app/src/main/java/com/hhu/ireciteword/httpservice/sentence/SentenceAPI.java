@@ -1,4 +1,4 @@
-package com.hhu.ireciteword.httpservice;
+package com.hhu.ireciteword.httpservice.sentence;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -6,19 +6,21 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class TranslateAPI{
+/**
+ * API接口文档 https://www.tianapi.com/apiview/174
+ */
 
-    /* API接口文档 https://www.tianapi.com/apiview/49 */
-
-    public static String request(String httpUrl,String tar) {
+public class SentenceAPI {
+    public static String request(String httpUrl, String httpArg) {
         BufferedReader reader = null;
         String result = null;
-        StringBuilder sbf = new StringBuilder();
-        httpUrl = httpUrl+"&word="+tar;
+        StringBuffer sbf = new StringBuffer();
+        httpUrl += httpArg;
 
         try {
             URL url = new URL(httpUrl);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            HttpURLConnection connection = (HttpURLConnection) url
+                    .openConnection();
             connection.setRequestMethod("GET");
             InputStream is = connection.getInputStream();
             reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));

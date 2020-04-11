@@ -16,20 +16,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnStartService"
+        android:id="@+id/Translate"
         android:layout_width="match_parent"
         android:layout_height="96dp"
-        android:text="@string/start"
+        android:text="@string/Translate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnStopService"
+        android:id="@+id/Sentence"
         android:layout_width="match_parent"
         android:layout_height="96dp"
         android:layout_marginTop="192dp"
-        android:text="@string/stop"
+        android:text="@string/Sentence"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/btnStartService" />
+        app:layout_constraintTop_toTopOf="@id/Translate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

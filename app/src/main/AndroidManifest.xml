@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hhu.ireciteword">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,10 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <service
-            android:name="com.hhu.ireciteword.httpservice.TranslateService"
-            android:enabled="true"
-            android:exported="true"/>
+        <activity android:name=".TranslateActivity"/>
+        <activity android:name=".SentenceActivity" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -22,5 +22,5 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET"/>
+
 </manifest>
