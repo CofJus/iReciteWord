@@ -16,9 +16,9 @@ public class TranslateAPI extends AppCompatActivity {
     //通用翻译API HTTP地址
     private final String url="https://openapi.youdao.com/api?";
     //APP ID
-    public  String appid="2a8946073e30bca5";
+    private final String appid="2a8946073e30bca5";
     //密钥
-    public String password="TMZsZ2QyP0lRUGzHl5ytHACKDjUUlarO";
+    private final String password="TMZsZ2QyP0lRUGzHl5ytHACKDjUUlarO";
     //随机数
     private int salt = 2;//Integer.valueOf((int)(System.currentTimeMillis()));
     //要翻译的内容
@@ -48,18 +48,6 @@ public class TranslateAPI extends AppCompatActivity {
         this.query = query;
         src=appid+query+salt+password;
     }
-
-
-    /***
-     * 设置用户自己的appid和密钥
-     * @param appid
-     * @param password
-     */
-    public void setValue(String appid,String password){
-        this.appid = appid;
-        this.password = password;
-    }
-
 
     /****
      * 获取json返回的数据
