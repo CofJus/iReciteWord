@@ -17,7 +17,7 @@ import com.hhu.ireciteword.R;
  * Created by Ji Rui on 2020/4/12
  */
 public class CopyDatabase {
-    /* Git Push Test */
+    
     private final int BUFFER_SIZE = 400000;
     private static final String DB_NAME = "words.db"; //保存的数据库文件名
     private static final String PACKAGE_NAME = "com.hhu.ireciteword";//包名
