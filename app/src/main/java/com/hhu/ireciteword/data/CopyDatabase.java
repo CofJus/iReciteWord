@@ -15,9 +15,10 @@ import com.hhu.ireciteword.R;
 
 /**
  * Created by Ji Rui on 2020/4/12
+ * 待修改
  */
 public class CopyDatabase {
-    private final int BUFFER_SIZE = 400000;
+    private final int BUFFER_SIZE = 4000000;
     private static final String DB_NAME = "words.db"; //保存的数据库文件名
     private static final String PACKAGE_NAME = "com.hhu.ireciteword";//包名
     private static final String DB_PATH = "/data"

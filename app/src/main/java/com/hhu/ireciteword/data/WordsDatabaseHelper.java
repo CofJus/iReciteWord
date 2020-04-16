@@ -6,7 +6,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class WordsDatabaseHelper extends SQLiteOpenHelper {
 
+    /* 数据库名 */
     private static final String DATABASE_NAME="words.db";
+
+    /* 表名 */
+    public static final String NOTE_TABLE_NAME="Note";
+    public static final String TEST_TABLE_NAME="Test";
 
     private static final int DATABASE_VERSION=1;
 
@@ -16,7 +21,7 @@ public class WordsDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + TEST_TABLE_NAME + "(_id INTEGER PRIMARY KEY AUTOINCREMENT," + " result TEXT)");
     }
 
     @Override
