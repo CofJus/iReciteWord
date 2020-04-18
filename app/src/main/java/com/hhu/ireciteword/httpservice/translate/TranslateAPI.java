@@ -117,7 +117,6 @@ public class TranslateAPI extends AppCompatActivity {
             Log.d("翻译结果",word);
             return word;
         } catch (JSONException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return null;

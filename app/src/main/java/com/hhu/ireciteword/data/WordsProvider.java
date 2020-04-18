@@ -124,9 +124,7 @@ public class WordsProvider extends ContentProvider {
     private String getTableName(Uri uri){
         String tableName = null;
         switch (mMatcher.match(uri)) {
-            case Note_Code:
-                tableName = WordsDatabaseHelper.NOTE_TABLE_NAME;
-                break;
+
             case Test_Code:
                 tableName = WordsDatabaseHelper.TEST_TABLE_NAME;
                 break;
