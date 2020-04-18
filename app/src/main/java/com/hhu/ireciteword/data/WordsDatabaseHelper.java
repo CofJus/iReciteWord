@@ -10,7 +10,6 @@ public class WordsDatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME="words.db";
 
     /* 表名 */
-    public static final String NOTE_TABLE_NAME="Note";
     public static final String TEST_TABLE_NAME="Test";
 
     private static final int DATABASE_VERSION=1;

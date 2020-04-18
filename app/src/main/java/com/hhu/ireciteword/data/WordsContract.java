@@ -7,7 +7,7 @@ public final class WordsContract {
 
     private WordsContract(){}
 
-    //为Note表定义列名常量
+    //为Note表定义列常量
     public static final class TestEntry implements BaseColumns{
         /**
          * table name

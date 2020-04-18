@@ -47,12 +47,6 @@ public class WordsProvider extends ContentProvider {
         // 运行在主线程，故不能做耗时操作,此处仅作展示
         mDbHelper = new WordsDatabaseHelper(getContext());
         db = mDbHelper.getWritableDatabase();
-
-        // 初始化两个表的数据(先清空两个表,再各加入一个记录)
-        db.execSQL("delete from Test");
-        db.execSQL("insert into Test values(1,'Carson');");
-        db.execSQL("insert into Test values(2,'Kobe');");
-
         return true;
     }
 
