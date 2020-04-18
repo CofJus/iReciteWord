@@ -2,15 +2,16 @@ package com.hhu.ireciteword;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.hhu.ireciteword.data.CopyDatabase;
-import com.hhu.ireciteword.data.WordsContract;
-import com.hhu.ireciteword.data.WordsProvider;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,10 +20,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /* 初始化数据库,可以放在背单词界面启动 */
-        CopyDatabase cp=new CopyDatabase(this);
-        cp.openDatabase();
-        cp.closeDatabase();
+        /* 初始化数据库 */
+        try {
+            @SuppressLint("SdCardPath")
+            String pathDatabase = "/data/data/com.hhu.ireciteword/databases/words.db";
+            copyDatabase(pathDatabase);
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.d("FAILED","FUCK!");
+        }
 
         /* Start TranslateActivity */
         findViewById(R.id.Translate).setOnClickListener(new View.OnClickListener() {
@@ -41,4 +47,22 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /* 复制数据库 */
+    private void copyDatabase(String strOutFileName) throws IOException
+    {
+        InputStream myInput;
+        OutputStream myOutput = new FileOutputStream(strOutFileName);
+        myInput = this.getAssets().open("words.db");
+        byte[] buffer = new byte[1024];
+        int length = myInput.read(buffer);
+        while(length > 0)
+        {
+            myOutput.write(buffer, 0, length);
+            length = myInput.read(buffer);
+        }
+
+        myOutput.flush();
+        myInput.close();
+        myOutput.close();
+    }
 }
