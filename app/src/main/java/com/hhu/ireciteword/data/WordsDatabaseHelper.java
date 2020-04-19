@@ -7,10 +7,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class WordsDatabaseHelper extends SQLiteOpenHelper {
 
     /* 数据库名 */
-    private static final String DATABASE_NAME="words.db";
+    public static final String DATABASE_NAME="words.db";
 
     /* 表名 */
     public static final String TEST_TABLE_NAME="Test";
+    public static final String NOTE_TABLE_NAME="Note";
 
     private static final int DATABASE_VERSION=1;
 
