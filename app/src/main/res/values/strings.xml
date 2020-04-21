@@ -2,7 +2,20 @@
     <string name="app_name">iReciteWord</string>
     <string name="start">start</string>
     <string name="stop">stop</string>
-    <string name="play_the_voice">Play the voice</string>
+    <string name="打卡挑战">打卡挑战</string>
+    <string name="发现">发现</string>
+    <string name="每日一句">每日一句</string>
+    <string name="在此创作每日一句">在此创作每日一句</string>
+    <string name="写下你喜欢的句子">写下你喜欢的句子</string>
+    <string name="这里你可以找到很多乐趣">这里你可以找到很多乐趣</string>
+    <string name="每日一句挑选每日好词好句">每日一句挑选每日好词好句 </string>
+    <string name="打卡挑战让你的学习不放假">打卡挑战让你的学习不放假 </string>
+    <string name="打卡挑战一">打卡挑战一</string>
+    <string name="打卡挑战二">打卡挑战二</string>
+    <string name="打卡挑战三">打卡挑战三</string>
+    <string name="敬请期待">敬请期待</string>
+    <string name="开启我的打卡之旅">开启我的打卡之旅</string>
+    <string name="play_the_voice" />
     <string name="Translate" />
-    <string name="Sentence" />
+
 </resources>

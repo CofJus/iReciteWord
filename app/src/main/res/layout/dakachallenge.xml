@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!--    /*-->
+<!--    * Created by 张佳豪 on 4.18-->
+<!--    */-->
+<ImageButton
+    android:id="@+id/dakachallengeback"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:contentDescription="@string/打卡挑战"
+    android:background="@mipmap/arrowback"/>
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_toEndOf="@+id/dakachallengeback"
+        android:layout_toRightOf="@+id/dakachallengeback"
+        android:layout_marginTop="5dp"
+        android:text="@string/打卡挑战"
+        android:textSize="30sp"
+        android:textColor="#000"/>
+<ImageView
+    android:id="@+id/top_picture"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginTop="50dp"
+    android:contentDescription="@string/打卡挑战"
+    android:background="@mipmap/top_dakachallenge"
+    />
+    <RelativeLayout
+        android:id="@+id/challenge_choices"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top_picture"  >
+    </RelativeLayout>
+        <Button
+            android:id="@+id/打卡挑战一"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_below="@+id/top_picture"
+            android:text="@string/打卡挑战一"
+            android:textSize="25sp"
+            android:background="@drawable/shape_page_home" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_below="@+id/打卡挑战一"
+            android:layout_marginTop="10dp"
+            android:text="@string/打卡挑战二"
+            android:id="@+id/打卡挑战二"
+            android:textSize="25sp"
+            android:background="@drawable/shape_page_home" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/打卡挑战三"
+            android:id="@+id/打卡挑战三"
+            android:textSize="25sp"
+            android:background="@drawable/shape_page_home"
+            android:layout_below="@+id/打卡挑战二"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:layout_alignParentBottom="true"
+        android:text="@string/敬请期待"
+        android:textSize="45sp"
+        android:textColor="#000"
+        android:layout_below="@+id/打卡挑战三"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+
+
+
+
+</RelativeLayout>

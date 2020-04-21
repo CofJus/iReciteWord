@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Created by 顾将赢 on 2020.4.16-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/tv_hello"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Hello！"
+        android:textColor="#000"
+        android:textSize="30sp" />
+    <View
+        android:id="@+id/v_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/tv_hello"
+        android:background="#cccccc"/>
+
+
+    <TextView
+        android:id="@+id/tv_book"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/calendar"
+        android:layout_margin="10dp"
+        android:background="@drawable/shape_home_btn1" />
+
+    <TextView
+        android:id="@+id/tv_assignment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_book"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+
+        android:text="-今日任务-"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_new_word_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_assignment"
+        android:layout_toLeftOf="@+id/review_number"
+        android:layout_marginRight="60dp"
+        android:text="50"
+        android:textColor="#000"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/tv_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="新词数"
+        android:textColor="#000"
+        android:layout_below="@+id/tv_new_word_number"
+        android:layout_alignRight="@+id/tv_new_word_number"/>
+    <TextView
+        android:id="@+id/review_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="40"
+        android:textColor="#000"
+        android:textSize="40sp"
+        android:layout_below="@+id/tv_assignment"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/review_number"
+        android:text="复习单词"
+        android:textColor="#000"
+        android:layout_alignLeft="@id/review_number" />
+
+    <TextView
+        android:id="@+id/tv_unstudy_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_assignment"
+        android:layout_toRightOf="@id/review_number"
+        android:layout_marginLeft="60dp"
+        android:text="50"
+        android:textColor="#000"
+        android:textSize="40sp" />
+    <TextView
+        android:id="@+id/tv_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="未学单词"
+        android:textColor="#000"
+        android:layout_below="@+id/tv_unstudy_number"
+        android:layout_alignLeft="@id/tv_unstudy_number" />
+
+    <Button
+        android:id="@+id/start_word_resite"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="开始背单词"
+        android:textColor="#FFF"
+        android:textSize="30sp"
+        android:layout_below="@id/tv_8"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/shape_page_home"
+        android:layout_centerInParent="true"/>
+
+    <Button
+        android:id="@+id/calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/v_1"
+        android:layout_alignRight="@+id/v_1"
+        android:layout_marginRight="20dp"
+        android:background="#fff"
+        android:text="打卡日历"
+        android:textSize="15sp" />
+    <Button
+        android:id="@+id/button_wordlist"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/v_1"
+        android:text="词表"
+        android:background="#fff"
+        android:layout_marginLeft="10dp"
+        android:textSize="15sp"/>
+
+
+</RelativeLayout>

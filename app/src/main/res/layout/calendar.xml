@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Created by 李雪滢 on 2020.4.16-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <ImageButton
+
+            android:id="@+id/back5"
+            android:layout_width="39dp"
+            android:layout_height="44dp"
+            android:layout_alignParentLeft="true"
+            android:src="@mipmap/arrowback" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:text="签到日历"
+            android:textColor="@color/color1"
+            android:textSize="20dp" />
+    </RelativeLayout>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="23"
+        android:columnCount="7"
+        android:orientation="horizontal"
+        android:rowCount="5">
+        <Button
+            android:layout_marginRight="5dp"
+            android:text="日"
+            android:layout_width="50dp"/>
+
+        <Button
+            android:layout_marginRight="5dp"
+            android:layout_width="50dp"
+            android:text="一" />
+
+        <Button
+            android:layout_marginRight="5dp"
+            android:text="二"
+            android:layout_width="50dp"/>
+
+        <Button
+            android:layout_marginRight="5dp"
+            android:text="三"
+            android:layout_width="50dp"/>
+
+        <Button
+            android:layout_marginRight="5dp"
+            android:text="四"
+            android:layout_width="50dp"/>
+
+        <Button
+            android:layout_marginRight="5dp"
+            android:text="五"
+            android:layout_width="50dp"/>
+
+        <Button
+            android:layout_marginRight="5dp"
+            android:text="六"
+            android:layout_width="50dp"/>
+
+        <Button
+            android:layout_width="50dp"
+            android:text=" "
+            android:background="@drawable/bt_shape3"/>
+
+        <Button
+            android:text=" "
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape3"/>
+
+        <Button
+            android:text="1"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape3"/>
+
+        <Button
+            android:text="2"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape3"/>
+
+        <Button
+            android:text="3"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape3"/>
+
+        <Button
+            android:text="4"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape3"/>
+
+        <Button
+            android:text="5"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape3"/>
+
+        <Button
+            android:layout_marginTop="5dp"
+            android:text="6"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape3"/>
+
+        <Button android:text="7"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape3"/>
+
+        <Button android:text="8"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape3"/>
+
+        <Button android:text="9"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape3"/>
+        <Button android:text="10"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape3"/>
+
+        <Button android:text="11"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape3"/>
+
+        <Button android:text="12"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape3"/>
+
+        <Button android:text="13"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape1"/>
+
+        <Button android:text="14"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape1"/>
+
+        <Button android:text="15"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape1"/>
+
+        <Button
+            android:text="16"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape1"/>
+
+        <Button android:text="17"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape1"/>
+
+        <Button android:text="18"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape1"/>
+
+        <Button android:text="19"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape1"/>
+
+        <Button android:text="20"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape1"/>
+
+        <Button android:text="21"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape1"/>
+
+        <Button android:text="22"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape1"/>
+
+        <Button android:text="23"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape1"/>
+
+        <Button android:text="24"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape1"/>
+
+        <Button android:text="25"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape1"/>
+
+        <Button android:text="26"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape1"/>
+
+        <Button android:text="27"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape1"/>
+
+        <Button android:text="28"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape1"/>
+
+        <Button android:text="29"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape1"/>
+
+        <Button android:text="30"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape1"/>
+
+        <Button android:text="31"
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape1"/>
+
+        <Button android:text=""
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape1"/>
+
+        <Button android:text=""
+            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bt_shape1"/>
+
+
+
+
+
+
+    </GridLayout>
+
+</LinearLayout>

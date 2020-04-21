@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+<!--    /*-->
+<!--    * Created by 石倍瑜 on 2020.4.16-->
+<!--    */-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white">
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/back"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/textColor"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CECECE"/>
+
+    <RelativeLayout
+        android:id="@+id/screen_lock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/screen_lock_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentStart="true"
+            android:text="锁屏单词"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_alignParentLeft="true" />
+
+        <CheckBox
+            android:id="@+id/screen_lock_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:button="@drawable/default_check_bg"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/screen_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="20dp"
+        android:clickable="false"
+        android:layout_marginBottom="20dp">
+        <TextView
+            android:id="@+id/screen_back_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设置锁屏单词背景"
+            android:textColor="@color/black_2"
+            android:textSize="18sp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true" />
+        <ImageView
+            android:id="@+id/screen_back_out"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/next"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/screen_select_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:text="选择锁屏单词"
+        android:textColor="@color/black_1"
+        android:textSize="14dp"
+        android:layout_marginBottom="10dp"/>
+    <RelativeLayout
+        android:id="@+id/screen_recover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:clickable="false">
+        <TextView
+            android:id="@+id/screen_recover_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="待复习单词"
+            android:textColor="@color/black_1"
+            android:textSize="18sp"
+            android:layout_alignParentLeft="true" />
+        <ImageView
+            android:id="@+id/screen_recover_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon_list_select"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/screen_life"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:clickable="true">
+        <TextView
+            android:id="@+id/screen_life_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="生词本"
+            android:textColor="@color/black_1"
+            android:textSize="18sp"
+            android:layout_alignParentLeft="true" />
+
+        <ImageView
+            android:id="@+id/screen_life_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon_list_select"
+            android:visibility="gone"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+
+
+</LinearLayout>

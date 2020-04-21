@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Created by 李雪滢 on 2020.4.16-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageButton
+
+        android:id="@+id/back3"
+        android:layout_width="67dp"
+        android:layout_height="55dp"
+        android:src="@mipmap/arrowback" />
+
+    <EditText
+        android:layout_width="345dp"
+        android:layout_height="59dp"
+        android:hint="请输入英文或中文" />
+
+</LinearLayout>

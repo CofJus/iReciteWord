@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!--    /*-->
+<!--    * Created by 张佳豪 on 4.18-->
+<!--    */-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:id="@+id/展示栏"
+        android:background="@mipmap/backgroundofeveryword"
+        android:textSize="20sp"
+        />
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:gravity="center"
+
+        android:layout_marginTop="160dp"
+        >
+
+        <ImageView
+            android:id="@+id/everydaywordpicture"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="5dp"
+
+            android:layout_marginRight="50dp"
+            android:background="@mipmap/everydayword" />
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="75dp"
+
+            android:background="@mipmap/dakachallenge"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/组合"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:layout_marginTop="280dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/everydayword"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:layout_marginLeft="30dp"
+            android:layout_gravity="bottom"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/buttoneverydayword"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/每日一句"
+            android:textColor="#FFF"
+            android:textSize="25sp"
+            />
+
+        <Button
+            android:id="@+id/dakachallenge"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:layout_marginRight="30dp"
+            android:layout_gravity="bottom"
+
+            android:background="@drawable/buttondakachallenge"
+            android:clickable="true"
+            android:text="@string/打卡挑战"
+            android:textColor="#fff"
+            android:textSize="25sp"
+            tools:ignore="ObsoleteLayoutParam" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/说明1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+android:layout_marginTop="405dp"
+        android:text="@string/每日一句"
+        android:textSize="28sp"
+        android:textColor="#000"
+        android:gravity="start"
+        android:textAlignment="textStart">
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@+id/说明1"
+        android:textSize="25sp"
+        android:text="和每日一句显示相同(不显示中文)"
+        android:textAlignment="textStart"
+        android:gravity="start">
+
+    </TextView>
+
+
+
+
+</RelativeLayout>

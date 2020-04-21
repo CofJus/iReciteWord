@@ -6,30 +6,99 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+<!--    /*-->
+<!--    * Created by 石倍瑜、李雪滢 on 2020.4.16-->
+<!--    */-->
+
+<!--    /*-->
+<!--    * 主题颜色为@color/main_color-->
+<!--    */-->
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/main_vp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:ignore="MissingConstraints"></androidx.viewpager.widget.ViewPager>
+
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textView5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#e1e1e1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <RadioGroup
+        android:id="@+id/main_rg"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:orientation="horizontal"
+        android:background="@drawable/shape_radiobutton"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <RadioButton
+            android:id="@+id/rbHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_chats"
+            android:gravity="center"
+            android:text="主页"
+            android:textColor="@color/radiobutton_textcolor" />
+
+
+        <RadioButton
+            android:id="@+id/rbDiscover"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_discover"
+            android:gravity="center"
+            android:text="发现"
+            android:textColor="@color/radiobutton_textcolor" />
+
+        <RadioButton
+            android:id="@+id/rbMe"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_me"
+            android:gravity="center"
+            android:text="我的"
+            android:textColor="@color/radiobutton_textcolor" />
+    </RadioGroup>
 
     <Button
-        android:id="@+id/Translate"
-        android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:text="@string/Translate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/btnStartService"
+        android:layout_width="33dp"
+        android:layout_height="50dp"
+        android:text="@string/start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnStopService"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/main_vp"
+        app:layout_constraintVertical_bias="0.3" />
 
     <Button
-        android:id="@+id/Sentence"
-        android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:layout_marginTop="192dp"
-        android:text="@string/Sentence"
+        android:id="@+id/btnStopService"
+        android:layout_width="31dp"
+        android:layout_height="51dp"
+        android:text="@string/stop"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/Translate" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

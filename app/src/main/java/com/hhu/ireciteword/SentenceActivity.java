@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.hhu.ireciteword.R;
 import com.hhu.ireciteword.httpservice.sentence.Sentence;
 import com.hhu.ireciteword.utils.VoicePlayer;
 

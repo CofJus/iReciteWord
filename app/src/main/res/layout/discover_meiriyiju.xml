@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!--    /*-->
+<!--    * Created by 张佳豪 on 4.18-->
+<!--    */-->
+<RelativeLayout
+    android:id="@+id/everydayword"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+</RelativeLayout>
+
+    <ImageView
+        android:id="@+id/yiju"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:contentDescription="@string/每日一句"
+        android:background="@mipmap/backgroundofeveryword"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:text="@string/每日一句"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:layout_centerInParent="true"
+        />
+<ImageButton
+    android:layout_width="75dp"
+    android:layout_height="75dp"
+    android:background="@mipmap/arrowback"
+    android:contentDescription="back"
+    android:id="@+id/everydaywordback"/>
+</RelativeLayout>

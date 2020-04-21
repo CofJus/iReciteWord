@@ -3,4 +3,15 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="white">#fff</color>
+    <color name="textColor">#707070</color>
+    <color name="black">#000</color>
+    <color name="black_1">#555</color>
+    <color name="black_2">#CFCFCF</color>
+    <color name="black_3">#919191</color>
+    <color name="main_color">#0099CC</color>
+    <color name="background_grey">#e6e6e6</color>
+    <color name="color2">#8a8a8a</color>
+    <color name="color1">#0099CC</color>
+
 </resources>

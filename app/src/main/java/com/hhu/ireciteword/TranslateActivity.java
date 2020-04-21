@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.hhu.ireciteword.R;
 import com.hhu.ireciteword.httpservice.translate.Translate;
 import com.hhu.ireciteword.utils.VoicePlayer;
 

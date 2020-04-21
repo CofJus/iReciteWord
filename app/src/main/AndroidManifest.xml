@@ -15,6 +15,27 @@
         <activity android:name=".TranslateActivity"/>
         <activity android:name=".SentenceActivity" />
 
+        <activity android:name=".ui.StudySettingActivity"/>
+        <activity android:name=".ui.SettingActivity" />
+        <activity android:name=".ui.HelpActivity" />
+        <activity android:name=".ui.LockScreenWordsActivity" />
+        <activity android:name=".ui.ImportWordBookActivity" />
+        <activity android:name=".ui.LearningSpeedActivity" />
+        <activity android:name=".ui.WordBookActivity" />
+        <activity android:name=".ui.HeaderActivity" />
+        <activity android:name=".ui.NoticeActivity" />
+        <activity android:name=".ui.ListwordBackHome"/>
+        <activity android:name=".ui.Word_recite1"/>
+        <activity android:name=".ui.Calendar"/>
+        <activity android:name=".ui.Word_recite2"/>
+        <activity android:name=".ui.Word_information"/>
+        <activity android:name=".ui.Search_word"/>
+        <activity android:name=".ui.Everyday_back"/>
+        <activity android:name=".ui.Dakachallenge_back"/>
+        <activity android:name=".ui.Challengeone_back"/>
+        <activity android:name=".ui.Challengetwo_back"/>
+        <activity android:name=".ui.Challengethree_back"/>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

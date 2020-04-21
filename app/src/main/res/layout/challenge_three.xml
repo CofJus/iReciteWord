@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!--    /*-->
+<!--    * Created by 张佳豪 on 4.18-->
+<!--    */-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/开启我的打卡之旅"
+        android:background="@mipmap/backgroundofeveryword"/>
+    <ImageButton
+        android:id="@+id/challengethreeback"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="@string/打卡挑战"
+        android:background="@mipmap/arrowback"/>
+
+    <Button
+        android:id="@+id/challengethree"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/buttondakachallenge"
+        android:text="@string/开启我的打卡之旅"
+        android:layout_gravity="bottom"
+        android:textColor="#FFF"
+        android:textSize="25sp"/>
+
+</FrameLayout>
