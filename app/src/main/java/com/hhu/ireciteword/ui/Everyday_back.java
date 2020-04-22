@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.hhu.ireciteword.R;
 
 //每日一句页面
+//TODO merge with SentenceActivity
 public class Everyday_back extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

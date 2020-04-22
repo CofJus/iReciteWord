@@ -44,10 +44,6 @@
             </intent-filter>
         </activity>
 
-        <provider
-            android:authorities="com.hhu.ireciteword"
-            android:name=".data.WordsProvider"
-            android:exported="false"/>
     </application>
 
 </manifest>

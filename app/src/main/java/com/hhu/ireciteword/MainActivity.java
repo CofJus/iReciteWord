@@ -1,15 +1,7 @@
 package com.hhu.ireciteword;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
-
-import android.annotation.SuppressLint;
-import android.content.ContentResolver;
 import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -18,9 +10,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.hhu.ireciteword.R;
-import com.hhu.ireciteword.data.Test;
-import com.hhu.ireciteword.data.WordsProvider;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
+
 import com.hhu.ireciteword.ui.Dakachallenge_back;
 import com.hhu.ireciteword.ui.Everyday_back;
 import com.hhu.ireciteword.ui.HeaderActivity;
@@ -42,20 +34,14 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.hhu.ireciteword.utils.CRUDUtils.insert;
-
 /*
- * Created by 石倍瑜 on 2020.4.16：
- * class OnClick() 、private void setListeners()
- */
-
-/*
- * Created by 石倍瑜、李雪滢 on 2020.4.16：
- * ViewPager相关
- */
-/*
- * Created by 李雪滢 on 2020.4.17
+ * 石倍瑜 2020/4/16：
+ * class OnClick()
+ * private void setListeners()
+ *
+ * 李雪滢 2020/4/17
  * viewPager.setCurrentItem(0);
+ * ViewPager
  */
 
 public class MainActivity extends AppCompatActivity {
@@ -83,7 +69,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /* 初始化数据库 */
+        /*
+        * 初始化数据库
+        * DBFlow自动复制，可删除
         try {
             @SuppressLint("SdCardPath")
             String pathDatabase = "/data/data/com.hhu.ireciteword/databases/words.db";
@@ -92,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
             Log.d("FAILED","FUCK!");
         }
+        */
 
         Toast.makeText(MainActivity.this,"目前在主活动中",Toast.LENGTH_LONG).show();
 
@@ -330,6 +319,4 @@ public class MainActivity extends AppCompatActivity {
         myInput.close();
         myOutput.close();
     }
-
-
 }
