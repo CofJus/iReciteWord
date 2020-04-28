@@ -1,7 +1,5 @@
 package com.hhu.ireciteword;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -13,7 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.hhu.ireciteword.R;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.hhu.ireciteword.httpservice.sentence.Sentence;
 import com.hhu.ireciteword.utils.VoicePlayer;
 

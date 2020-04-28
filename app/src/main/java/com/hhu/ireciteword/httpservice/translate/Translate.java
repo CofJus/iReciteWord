@@ -51,7 +51,7 @@ public class Translate {
     }
     
     //获取释义
-    public String getExplain(String json) {
+    public String getMeaning(String json) {
         try {
             JSONObject obj=new JSONObject(json);
             JSONObject obj1=obj.getJSONObject("basic");
