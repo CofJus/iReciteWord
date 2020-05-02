@@ -3,9 +3,12 @@ package com.hhu.ireciteword.utils;
 import android.util.Log;
 
 import com.hhu.ireciteword.data.LookUpResult;
+import com.raizlabs.android.dbflow.sql.language.OrderBy;
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 import java.util.List;
+
+import static com.hhu.ireciteword.data.LookUpResult_Table.word;
 
 /**
  * 基本CRUD
@@ -35,16 +38,24 @@ public class CRUDUtils {
      * 优先从已查询的单词中获取信息
      * @return 列表
      */
-    public static List<LookUpResult> query(){
+    public static List<LookUpResult> query(String tar){
         List<LookUpResult> lookUpResults = SQLite.select().
-                from(LookUpResult.class).queryList();
+                from(LookUpResult.class).
+                where(word.eq(tar)).
+                queryList();
         return lookUpResults;
     }
 
     /**
      * 随机弹出一行
      */
-    public static void randomQuery(){
+    public static List<LookUpResult> randomQuery(){
         // SELECT * FROM Note order by RANDOM() limit 1;
+        List<LookUpResult> lookUpResults = SQLite.select().
+                from(LookUpResult.class).
+                orderBy(OrderBy.fromString("RANDOM()")).
+                limit(1).
+                queryList();
+        return lookUpResults;
     }
 }
