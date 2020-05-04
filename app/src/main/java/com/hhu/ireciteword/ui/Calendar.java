@@ -1,8 +1,5 @@
 package com.hhu.ireciteword.ui;
 
-/*
- * Created by 李雪滢 on 2020.4.16
- */
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -11,7 +8,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.hhu.ireciteword.R;
 
-//当前处于日历界面
+/**
+ * 日历界面
+ * @author 李雪滢
+ * @date 2020/4/16
+ */
 public class Calendar extends AppCompatActivity {
     @Override
     protected  void onCreate(Bundle savedInstanceState){

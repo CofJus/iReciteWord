@@ -12,17 +12,21 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by Ji Rui on 2020/4/11
+ * @author Ji Rui
+ * @date 2020/4/11
  */
 
 public class Translate {
     private String jsonResult;
 
-    private void setjsonResult(String jsonResult) {
+    private void setJsonResult(String jsonResult) {
         this.jsonResult = jsonResult;
     }
-    
-    //获取原词
+
+    private static final Pattern CRLF = Pattern.compile("(\r\n|\r|\n|\n\r)");
+    /**
+     * 获取原词
+     */
     public String getQuery(String json) {
         try {
             JSONObject obj=new JSONObject(json);
@@ -33,7 +37,9 @@ public class Translate {
         return null;
     }
 
-    //获取翻译结果
+    /**
+     * 获取翻译结果
+     */
     public String getResult(String json) {
         try {
             JSONObject obj = new JSONObject(json);
@@ -49,8 +55,10 @@ public class Translate {
         }
         return null;
     }
-    
-    //获取释义
+
+    /**
+     * 获取释义
+     */
     public String getMeaning(String json) {
         try {
             JSONObject obj=new JSONObject(json);
@@ -84,8 +92,10 @@ public class Translate {
         }
         return null;
     }
-    
-    //获取发音URL
+
+    /**
+     * 获取发音URL
+     */
     public String getVoiceURL(String json) {
         try {
             JSONObject obj=new JSONObject(json);
@@ -122,7 +132,6 @@ public class Translate {
          * 过滤换行符，正则
          * 暂时用不上，读取用户输入时使用
          */
-        Pattern CRLF = Pattern.compile("(\r\n|\r|\n|\n\r)");
         Matcher m = CRLF.matcher(word);
         if (m.find()) {
             word = m.replaceAll("");
@@ -135,7 +144,7 @@ public class Translate {
             URLResult = api.requestUrl();
             Log.d("请求的完整url：", URLResult);
             String jsonResult = api.Result();
-            setjsonResult(jsonResult);
+            setJsonResult(jsonResult);
             Log.d("返回的json：", jsonResult);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();

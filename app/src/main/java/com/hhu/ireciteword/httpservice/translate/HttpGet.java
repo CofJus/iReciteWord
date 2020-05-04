@@ -1,5 +1,7 @@
 package com.hhu.ireciteword.httpservice.translate;
 
+import android.annotation.SuppressLint;
+
 import java.io.BufferedReader;
 import java.io.Closeable;
 import java.io.IOException;
@@ -22,24 +24,24 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
 class HttpGet {
-    private static final int SOCKET_TIMEOUT = 10000; // 10S
+    private static final int SOCKET_TIMEOUT = 10000;
     private static final String GET = "GET";
 
-    protected static String get(String host, Map<String, String> params) {
+    static String get(String host, Map<String, String> params) {
         try {
             // 设置SSLContext
             SSLContext sslcontext = SSLContext.getInstance("TLS");
             sslcontext.init(null, new TrustManager[] { myX509TrustManager }, null);
 
             String sendUrl = getUrlWithQueryString(host, params);
-
-            URL uri = new URL(sendUrl); // 创建URL对象
+            // 创建URL对象
+            URL uri = new URL(sendUrl);
             HttpURLConnection conn = (HttpURLConnection) uri.openConnection();
             if (conn instanceof HttpsURLConnection) {
                 ((HttpsURLConnection) conn).setSSLSocketFactory(sslcontext.getSocketFactory());
             }
-
-            conn.setConnectTimeout(SOCKET_TIMEOUT); // 设置相应超时
+            // 设置相应超时
+            conn.setConnectTimeout(SOCKET_TIMEOUT);
             conn.setRequestMethod(GET);
             int statusCode = conn.getResponseCode();
             if (statusCode != HttpURLConnection.HTTP_OK) {
@@ -60,10 +62,12 @@ class HttpGet {
             }
 
             String text = builder.toString();
-
-            close(br); // 关闭数据流
-            close(is); // 关闭数据流
-            conn.disconnect(); // 断开连接
+            // 关闭数据流
+            close(br);
+            // 关闭数据流
+            close(is);
+            // 断开连接
+            conn.disconnect();
 
             return text;
         } catch (MalformedURLException e) {
@@ -94,7 +98,8 @@ class HttpGet {
         int i = 0;
         for (String key : params.keySet()) {
             String value = params.get(key);
-            if (value == null) { // 过滤空的key
+            // 过滤空的key
+            if (value == null) {
                 continue;
             }
 
@@ -149,10 +154,12 @@ class HttpGet {
             return null;
         }
 
+        @SuppressLint("TrustAllX509TrustManager")
         @Override
         public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
         }
 
+        @SuppressLint("TrustAllX509TrustManager")
         @Override
         public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
         }

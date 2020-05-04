@@ -10,11 +10,11 @@ import java.net.URL;
  * API接口文档 https://www.tianapi.com/apiview/174
  */
 
-public class SentenceAPI {
-    public static String request(String httpUrl, String httpArg) {
+class SentenceAPI {
+    static String request(String httpUrl, String httpArg) {
         BufferedReader reader = null;
         String result = null;
-        StringBuffer sbf = new StringBuffer();
+        StringBuilder sbf = new StringBuilder();
         httpUrl += httpArg;
 
         try {

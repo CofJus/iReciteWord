@@ -15,6 +15,7 @@ import com.hhu.ireciteword.R;
 
 //处于打卡挑战页面
 public class Dakachallenge_back extends AppCompatActivity {
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dakachallenge);

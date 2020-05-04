@@ -12,26 +12,33 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import static com.hhu.ireciteword.httpservice.translate.HttpGet.get;
+
+/**
+ * @author Ji Rui
+ */
+
 public class TranslateAPI extends AppCompatActivity {
-    //通用翻译API HTTP地址
+
     private final String url="https://openapi.youdao.com/api?";
-    //APP ID
-    private final String appid="2a8946073e30bca5";
-    //密钥
+    private final String appId ="2a8946073e30bca5";
     private final String password="TMZsZ2QyP0lRUGzHl5ytHACKDjUUlarO";
-    //随机数
-    private int salt = 2;//Integer.valueOf((int)(System.currentTimeMillis()));
-    //要翻译的内容
+    /**
+     * 随机数
+     */
+    private int salt = 2;
+
     private String query;
     //签名  加密后的字符串
     private String sign;
-    // 加密前的原文
+
+    /**
+     * 加密前的原文
+     */
     private String src;
 
-    //要翻译的语种
     private String from="EN";
 
-    //翻译的目标语种
     private String to="zh-CHS";
 
     public void setTo(String to) {
@@ -46,7 +53,7 @@ public class TranslateAPI extends AppCompatActivity {
     //获取要翻译的内容
     public void setQuery(String query) {
         this.query = query;
-        src=appid+query+salt+password;
+        src= appId +query+salt+password;
     }
 
     /****
@@ -57,7 +64,8 @@ public class TranslateAPI extends AppCompatActivity {
     public String Result() throws NoSuchAlgorithmException {
         String url=requestUrl();
         com.hhu.ireciteword.httpservice.translate.HttpGet httpGet=new com.hhu.ireciteword.httpservice.translate.HttpGet();
-        String result=httpGet.get(url,null);
+        String result=get(url,null);
+        assert result != null;
         Log.d("获取结果：",result);
         //JsonToString(result);
         return result;
@@ -73,7 +81,7 @@ public class TranslateAPI extends AppCompatActivity {
 
         String sign=stringToMD5(src);
         Log.d("MD5检验：",src);
-        String requesturl=url+"q="+query+"&from="+from+"&to="+to+"&appKey="+appid+"&salt="+salt+"&sign="+sign;
+        String requesturl=url+"q="+query+"&from="+from+"&to="+to+"&appKey="+ appId +"&salt="+salt+"&sign="+sign;
         return requesturl;
     }
 
@@ -96,8 +104,9 @@ public class TranslateAPI extends AppCompatActivity {
 
         StringBuilder hex = new StringBuilder(hash.length * 2);
         for (byte b : hash) {
-            if ((b & 0xFF) < 0x10)
+            if ((b & 0xFF) < 0x10) {
                 hex.append("0");
+            }
             hex.append(Integer.toHexString(b & 0xFF));
         }
 

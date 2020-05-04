@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.hhu.ireciteword.R;
 
 public class Challengetwo_back extends AppCompatActivity {
+    @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
