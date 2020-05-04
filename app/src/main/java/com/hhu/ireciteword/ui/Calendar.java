@@ -13,6 +13,7 @@ import com.hhu.ireciteword.R;
 
 //当前处于日历界面
 public class Calendar extends AppCompatActivity {
+    @Override
     protected  void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar);

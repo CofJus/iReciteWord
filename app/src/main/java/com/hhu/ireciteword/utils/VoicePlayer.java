@@ -10,18 +10,22 @@ import java.io.IOException;
  */
 
 public class VoicePlayer {
-    public void playVoice(String ttsURL){
+    public static void playVoice(String url){
+        //播放音频
         MediaPlayer mediaPlayer = new MediaPlayer();
         try {
-            mediaPlayer.setDataSource(ttsURL);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
+            mediaPlayer.setDataSource(url);
             mediaPlayer.prepare();
         } catch (IOException e) {
             e.printStackTrace();
         }
         mediaPlayer.start();
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+                mediaPlayer = null;
+            }
+        });
     }
 }

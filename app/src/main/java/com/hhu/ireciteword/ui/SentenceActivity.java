@@ -1,4 +1,4 @@
-package com.hhu.ireciteword;
+package com.hhu.ireciteword.ui;
 
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
@@ -13,9 +13,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.hhu.ireciteword.R;
 import com.hhu.ireciteword.httpservice.sentence.Sentence;
-import com.hhu.ireciteword.utils.VoicePlayer;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
 
 import java.io.IOException;
@@ -26,9 +27,12 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+import static com.hhu.ireciteword.utils.VoicePlayer.playVoice;
+
 /**
  * 每日一句 Activity
- * Created by Ji Rui on 2020/3/27
+ * @author Ji Rui
+ * @date 2020/3/27
  */
 
 public class SentenceActivity extends AppCompatActivity {
@@ -36,6 +40,7 @@ public class SentenceActivity extends AppCompatActivity {
     TextView textEnglish;
     TextView textChinese;
     Button buttonVoice;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +50,7 @@ public class SentenceActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final Sentence st=new Sentence();
+                final Sentence st = new Sentence();
                 try {
                     downloadPicture(st.getImg());
                     textChinese.setText(st.getChinese());
@@ -54,9 +59,8 @@ public class SentenceActivity extends AppCompatActivity {
                     buttonVoice.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            VoicePlayer vc=new VoicePlayer();
                             try {
-                                vc.playVoice(st.getTTS());
+                                playVoice(st.getTTS());
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -70,11 +74,11 @@ public class SentenceActivity extends AppCompatActivity {
 
     }
 
-    private void initView(){
-        imgView=findViewById(R.id.imgViewOkhttp);
-        textChinese=findViewById(R.id.Chinese);
-        textEnglish=findViewById(R.id.English);
-        buttonVoice=findViewById(R.id.Voice);
+    private void initView() {
+        imgView = findViewById(R.id.imgViewOkhttp);
+        textChinese = findViewById(R.id.Chinese);
+        textEnglish = findViewById(R.id.English);
+        buttonVoice = findViewById(R.id.Voice);
     }
 
     /* Update UI */
@@ -82,33 +86,35 @@ public class SentenceActivity extends AppCompatActivity {
     Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            byte[] Picture = (byte[]) msg.obj;
-            Bitmap bitmap = BitmapFactory.decodeByteArray(Picture, 0, Picture.length);
+            byte[] picture = (byte[]) msg.obj;
+            Bitmap bitmap = BitmapFactory.decodeByteArray(picture, 0, picture.length);
             //设置图片
             imgView.setImageBitmap(bitmap);
         }
     };
 
-    /* Download Pictures */
-    public void downloadPicture(String Path) {
+    /**
+     * Download Pictures
+     */
+    public void downloadPicture(String path) {
 
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder()
-                .url(Path)
+                .url(path)
                 .build();
         Call call = okHttpClient.newCall(request);
         call.enqueue(new Callback() {
             @Override
-            public void onFailure(Call call, IOException e) {
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
                 handler.sendEmptyMessage(606);
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                byte[] Picture_bt = response.body().bytes();
+            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                byte[] pictureBt = response.body().bytes();
                 //通过handler更新UI
                 Message message = handler.obtainMessage();
-                message.obj = Picture_bt;
+                message.obj = pictureBt;
                 message.what = 200;
                 handler.sendMessage(message);
             }

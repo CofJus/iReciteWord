@@ -1,7 +1,5 @@
 package com.hhu.ireciteword.utils;
 
-import android.util.Log;
-
 import com.hhu.ireciteword.data.LookUpResult;
 import com.raizlabs.android.dbflow.sql.language.OrderBy;
 import com.raizlabs.android.dbflow.sql.language.SQLite;
@@ -25,7 +23,6 @@ public class CRUDUtils {
     public static void insert(String[] result){
 
         LookUpResult lookUpResult=new LookUpResult();
-        Log.i("SUCCESS","CREATE TABLE_LOOKUPRESULT.");
         lookUpResult.setWord(result[0]);
         lookUpResult.setUsPhonetic(result[1]);
         lookUpResult.setUkPhonetic(result[2]);
@@ -47,7 +44,7 @@ public class CRUDUtils {
     }
 
     /**
-     * 随机弹出一行
+     * 从已查取的单词中随机弹出一行
      */
     public static List<LookUpResult> randomQuery(){
         // SELECT * FROM Note order by RANDOM() limit 1;

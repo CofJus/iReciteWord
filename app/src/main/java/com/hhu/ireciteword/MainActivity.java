@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.hhu.ireciteword.ui.Dakachallenge_back;
-import com.hhu.ireciteword.ui.Everyday_back;
 import com.hhu.ireciteword.ui.HeaderActivity;
 import com.hhu.ireciteword.ui.HelpActivity;
 import com.hhu.ireciteword.ui.ImportWordBookActivity;
@@ -23,14 +22,11 @@ import com.hhu.ireciteword.ui.ListwordBackHome;
 import com.hhu.ireciteword.ui.LockScreenWordsActivity;
 import com.hhu.ireciteword.ui.MyPagerAdapter;
 import com.hhu.ireciteword.ui.NoticeActivity;
+import com.hhu.ireciteword.ui.SentenceActivity;
 import com.hhu.ireciteword.ui.SettingActivity;
 import com.hhu.ireciteword.ui.WordBookActivity;
 import com.hhu.ireciteword.ui.Word_recite1;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
     RadioButton rbChat, rbDiscover, rbMe;
     RadioGroup radioGroup;
 
-
     private LinearLayout llNotice;         //通知
     private LinearLayout llWordBook;       //单词书
     private LinearLayout llNewWordList;    //生词本
@@ -69,20 +64,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*
-        * 初始化数据库
-        * DBFlow自动复制，可删除
-        try {
-            @SuppressLint("SdCardPath")
-            String pathDatabase = "/data/data/com.hhu.ireciteword/databases/words.db";
-            copyDatabase(pathDatabase);
-        } catch (IOException e) {
-            e.printStackTrace();
-            Log.d("FAILED","FUCK!");
-        }
-        */
-
-        Toast.makeText(MainActivity.this,"目前在主活动中",Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this, "目前在主活动中", Toast.LENGTH_LONG).show();
 
 
         //Initialise Views
@@ -93,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         rbMe = (RadioButton) findViewById(R.id.rbMe);
         rbChat.setChecked(true);
 
-        View view1=getLayoutInflater().inflate(R.layout.page_me, null, false);
+        View view1 = getLayoutInflater().inflate(R.layout.page_me, null, false);
 
         lsViews.add(getLayoutInflater().inflate(R.layout.page_home, null, false));
         lsViews.add(getLayoutInflater().inflate(R.layout.page_discover, null, false));
@@ -109,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
         llNotice = view1.findViewById(R.id.ll_notice);
         llWordBook = view1.findViewById(R.id.ll_word_book);
-        llHeader= view1.findViewById(R.id.iv_header);
+        llHeader = view1.findViewById(R.id.iv_header);
         llDailyAttendance = view1.findViewById(R.id.ll_daily_attendance);
         llNewWordList = view1.findViewById(R.id.ll_new_word_list);
         llLearningSpeed = view1.findViewById(R.id.ll_learning_speed);
@@ -117,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
         llLockScreenWord = view1.findViewById(R.id.ll_Lock);
         llHelp = view1.findViewById(R.id.ll_help);
         llSetting = view1.findViewById(R.id.ll_setting);
-
 
 
         setListeners();      //设置点击事件的方法
@@ -135,33 +116,33 @@ public class MainActivity extends AppCompatActivity {
                     //Do something on selected page at position
                     //位于第一页时，单词列表，实现监听事件
                     Button button_wordlist = (Button) findViewById(R.id.button_wordlist);
-                    button_wordlist.setOnClickListener(new View.OnClickListener(){
+                    button_wordlist.setOnClickListener(new View.OnClickListener() {
                         @Override
-                        public void onClick(View v){
-                            Intent it=new Intent(MainActivity.this, ListwordBackHome.class);
+                        public void onClick(View v) {
+                            Intent it = new Intent(MainActivity.this, ListwordBackHome.class);
                             startActivity(it);
-                            Toast.makeText(MainActivity.this,"进入单词界面",Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this, "进入单词界面", Toast.LENGTH_LONG).show();
 
                         }
                     });
                     //开始背单词
-                    Button btnStart =(Button)findViewById(R.id.start_word_resite);//主页的开始背单词按钮
+                    Button btnStart = (Button) findViewById(R.id.start_word_resite);//主页的开始背单词按钮
                     btnStart.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent it = new Intent( MainActivity.this, Word_recite1.class);
+                            Intent it = new Intent(MainActivity.this, Word_recite1.class);
                             startActivity(it);
-                            Toast.makeText(MainActivity.this,"进入背单词界面",Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this, "进入背单词界面", Toast.LENGTH_LONG).show();
                         }
                     });
                     //打卡日历
-                    Button btnCalendar =(Button)findViewById(R.id.calendar);
+                    Button btnCalendar = (Button) findViewById(R.id.calendar);
                     btnCalendar.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent it = new Intent( MainActivity.this,com.hhu.ireciteword.ui.Calendar.class);
+                            Intent it = new Intent(MainActivity.this, com.hhu.ireciteword.ui.Calendar.class);
                             startActivity(it);
-                            Toast.makeText(MainActivity.this,"进入打卡日历",Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this, "进入打卡日历", Toast.LENGTH_LONG).show();
                         }
                     });
                 }
@@ -179,6 +160,8 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 2://Me
                         rbMe.setChecked(true);
+                        break;
+                    default:
                         break;
                 }
             }
@@ -201,18 +184,18 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.rbDiscover:
                         viewPager.setCurrentItem(1);
                         //位于第二页时，每日一句，实现监听
-                        Button everydayword =(Button)findViewById(R.id.everydayword);
-                        everydayword.setOnClickListener(new View.OnClickListener(){
+                        Button everydayword = (Button) findViewById(R.id.everydayword);
+                        everydayword.setOnClickListener(new View.OnClickListener() {
                             @Override
-                            public void onClick(View v){
-                                Intent it=new Intent(MainActivity.this, Everyday_back.class);
+                            public void onClick(View v) {
+                                Intent it = new Intent(MainActivity.this, SentenceActivity.class);
                                 startActivity(it);
-                                Toast.makeText(MainActivity.this,"进入每日一句界面",Toast.LENGTH_LONG).show();
+                                Toast.makeText(MainActivity.this, "进入每日一句界面", Toast.LENGTH_LONG).show();
 
                             }
                         });
-                        Button dakachallenge =(Button) findViewById(R.id.dakachallenge);
-                        dakachallenge.setOnClickListener(new View.OnClickListener(){
+                        Button dakachallenge = (Button) findViewById(R.id.dakachallenge);
+                        dakachallenge.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 Intent it = new Intent(MainActivity.this, Dakachallenge_back.class);
@@ -226,13 +209,15 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.rbMe:
                         viewPager.setCurrentItem(2);
                         break;
+                    default:
+                        break;
                 }
             }
         });
 
     }
 
-    private void setListeners(){              //实现点击事件的方法
+    private void setListeners() {              //实现点击事件的方法
         OnClick onClick = new OnClick();
         llNotice.setOnClickListener(onClick);
         llWordBook.setOnClickListener(onClick);
@@ -247,76 +232,58 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private class OnClick implements View.OnClickListener{      //点击事件类实现OnClickListener接口
+    private class OnClick implements View.OnClickListener {      //点击事件类实现OnClickListener接口
 
         @Override
         public void onClick(View v) {
             Intent intent = null;
-            switch (v.getId()){
+            switch (v.getId()) {
 
                 case R.id.ll_notice:
                     //跳转到通知页面，下同
-                    intent= new Intent(MainActivity.this, NoticeActivity.class);
-                    intent.putExtra("content","通知");
+                    intent = new Intent(MainActivity.this, NoticeActivity.class);
+                    intent.putExtra("content", "通知");
                     break;
                 case R.id.ll_word_book:
-                    intent= new Intent(MainActivity.this, WordBookActivity.class);
-                    intent.putExtra("content","单词书");
+                    intent = new Intent(MainActivity.this, WordBookActivity.class);
+                    intent.putExtra("content", "单词书");
                     break;
                 case R.id.iv_header:
                     intent = new Intent(MainActivity.this, HeaderActivity.class);
-                    intent.putExtra("content","头像");
+                    intent.putExtra("content", "头像");
                     break;
                 case R.id.ll_daily_attendance:
-                    intent = new Intent(MainActivity.this,com.hhu.ireciteword.ui.Calendar.class);
-                    intent.putExtra("content","打卡");
+                    intent = new Intent(MainActivity.this, com.hhu.ireciteword.ui.Calendar.class);
+                    intent.putExtra("content", "打卡");
                     break;
                 case R.id.ll_new_word_list:
                     intent = new Intent(MainActivity.this, ListwordBackHome.class);
-                    intent.putExtra("content","生词本");
+                    intent.putExtra("content", "生词本");
                     break;
                 case R.id.ll_learning_speed:
                     intent = new Intent(MainActivity.this, LearningSpeedActivity.class);
-                    intent.putExtra("content","学习进度");
+                    intent.putExtra("content", "学习进度");
                     break;
                 case R.id.ll_import:
                     intent = new Intent(MainActivity.this, ImportWordBookActivity.class);
-                    intent.putExtra("content","导入单词书");
+                    intent.putExtra("content", "导入单词书");
                     break;
                 case R.id.ll_Lock:
                     intent = new Intent(MainActivity.this, LockScreenWordsActivity.class);
-                    intent.putExtra("content","锁屏单词");
+                    intent.putExtra("content", "锁屏单词");
                     break;
                 case R.id.ll_help:
                     intent = new Intent(MainActivity.this, HelpActivity.class);
-                    intent.putExtra("content","帮助与反馈");
+                    intent.putExtra("content", "帮助与反馈");
                     break;
                 case R.id.ll_setting:
                     intent = new Intent(MainActivity.this, SettingActivity.class);
-                    intent.putExtra("content","设置");
+                    intent.putExtra("content", "设置");
+                    break;
+                default:
                     break;
             }
             startActivity(intent);
         }
-    }
-
-
-    /* 复制数据库 */
-    private void copyDatabase(String strOutFileName) throws IOException
-    {
-        InputStream myInput;
-        OutputStream myOutput = new FileOutputStream(strOutFileName);
-        myInput = this.getAssets().open("words.db");
-        byte[] buffer = new byte[1024];
-        int length = myInput.read(buffer);
-        while(length > 0)
-        {
-            myOutput.write(buffer, 0, length);
-            length = myInput.read(buffer);
-        }
-
-        myOutput.flush();
-        myInput.close();
-        myOutput.close();
     }
 }

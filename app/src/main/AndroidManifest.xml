@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".TranslateActivity"/>
-        <activity android:name=".SentenceActivity" />
+        <activity android:name=".ui.SentenceActivity" />
 
         <activity android:name=".ui.StudySettingActivity"/>
         <activity android:name=".ui.SettingActivity" />
@@ -30,7 +30,6 @@
         <activity android:name=".ui.Word_recite2"/>
         <activity android:name=".ui.Word_information"/>
         <activity android:name=".ui.Search_word"/>
-        <activity android:name=".ui.Everyday_back"/>
         <activity android:name=".ui.Dakachallenge_back"/>
         <activity android:name=".ui.Challengeone_back"/>
         <activity android:name=".ui.Challengetwo_back"/>
