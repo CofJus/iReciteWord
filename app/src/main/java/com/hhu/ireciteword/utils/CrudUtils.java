@@ -13,8 +13,7 @@ import static com.hhu.ireciteword.data.LookUpResult_Table.word;
  * @author Ji Rui
  */
 
-//TODO basic CRUD
-public class CRUDUtils {
+public class CrudUtils {
 
     /**
      * 查词结果insert

@@ -3,6 +3,7 @@ package com.hhu.ireciteword.ui;
 /*
  * Created by 李雪滢 on 2020.4.16
  */
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
-
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,6 +22,7 @@ public class Word_recite1 extends AppCompatActivity {
 
     private final static String TAG="Word_recite1";
 
+    @Override
     @SuppressLint("WrongViewCast")
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);

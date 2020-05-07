@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.hhu.ireciteword.R;
 //TODO merge with TranslateActivity
 public class Search_word extends AppCompatActivity {
+    @Override
     public void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);

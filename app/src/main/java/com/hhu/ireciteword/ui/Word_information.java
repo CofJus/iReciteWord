@@ -15,6 +15,7 @@ import com.hhu.ireciteword.R;
 
 //活动：单词详情页
 public class Word_information extends AppCompatActivity {
+    @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_information);//单词详情页

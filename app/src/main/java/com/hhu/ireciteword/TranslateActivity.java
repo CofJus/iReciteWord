@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.hhu.ireciteword.httpservice.translate.Translate;
 
-import static com.hhu.ireciteword.utils.CRUDUtils.insert;
+import static com.hhu.ireciteword.utils.CrudUtils.insert;
 import static com.hhu.ireciteword.utils.VoicePlayer.playVoice;
 
 /**

@@ -15,6 +15,7 @@ import com.hhu.ireciteword.R;
 
 //活动：用户点了不认识之后，弹出来例句提示
 public class Word_recite2 extends AppCompatActivity {
+    @Override
     public void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);

@@ -55,7 +55,6 @@ public class SentenceActivity extends AppCompatActivity {
                     downloadPicture(st.getImg());
                     textChinese.setText(st.getChinese());
                     textEnglish.setText(st.getEnglish());
-                    //TODO sometimes can't play voice
                     buttonVoice.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {

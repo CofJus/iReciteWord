@@ -7,7 +7,6 @@ import com.raizlabs.android.dbflow.annotation.Database;
  * Created by Ji Rui on 2020/4/19
  */
 
-//TODO create tables in the db
 @Database(name = WordsDatabase.NAME, version = WordsDatabase.VERSION)
 public class WordsDatabase {
 
