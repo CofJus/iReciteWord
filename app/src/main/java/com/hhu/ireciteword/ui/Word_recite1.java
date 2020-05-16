@@ -48,7 +48,6 @@ public class Word_recite1 extends AppCompatActivity {
         });
 
         //通过按钮remember1,跳转到单词详情页word_information
-
         Button btnRemember1=(Button)findViewById(R.id.remember1);
         btnRemember1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,8 +59,6 @@ public class Word_recite1 extends AppCompatActivity {
         });
 
         //通过按钮forget1，跳转到下一个提示word_recite2
-
-
         Button btnForget1=(Button)findViewById(R.id.forget1);
         btnForget1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,11 +68,5 @@ public class Word_recite1 extends AppCompatActivity {
                 Toast.makeText(Word_recite1.this,"你进入提示界面",Toast.LENGTH_LONG).show();
             }
         });
-
-
-
-
-
-
     }
 }

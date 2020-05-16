@@ -1,5 +1,6 @@
-package com.hhu.ireciteword.data;
+package com.hhu.ireciteword.data.vo;
 
+import com.hhu.ireciteword.data.VocabularyDatabase;
 import com.raizlabs.android.dbflow.annotation.Column;
 import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
@@ -10,7 +11,7 @@ import com.raizlabs.android.dbflow.structure.BaseModel;
  * Created by Ji Rui on 2020/4/22
  */
 
-@Table(database = WordsDatabase.class)
+@Table(database = VocabularyDatabase.class)
 public class LookUpResult extends BaseModel {
 
     @PrimaryKey
@@ -26,7 +27,7 @@ public class LookUpResult extends BaseModel {
     private String meaning;
 
     @Column
-    private String voiceURL;
+    private String voiceUrl;
 
     public String getWord() {
         return word;
@@ -60,11 +61,11 @@ public class LookUpResult extends BaseModel {
         this.meaning = meaning;
     }
 
-    public String getVoiceURL() {
-        return voiceURL;
+    public String getVoiceUrl() {
+        return voiceUrl;
     }
 
-    public void setVoiceURL(String voiceURL) {
-        this.voiceURL = voiceURL;
+    public void setVoiceUrl(String voiceUrl) {
+        this.voiceUrl = voiceUrl;
     }
 }
