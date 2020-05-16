@@ -2,12 +2,13 @@ package com.hhu.ireciteword.data.vo;
 
 import com.hhu.ireciteword.data.VocabularyDatabase;
 import com.raizlabs.android.dbflow.annotation.Column;
+import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
 
 @Table(database = VocabularyDatabase.class)
 public class Cet6 {
 
-    @Column
+    @PrimaryKey
     private int id;
 
     @Column
