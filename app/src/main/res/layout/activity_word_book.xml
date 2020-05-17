@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/background_grey"
     tools:context=".ui.WordBookActivity">
 
 <!--    /*-->
@@ -32,17 +33,181 @@
             android:textSize="20sp"
             android:textColor="@color/textColor"/>
     </RelativeLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#CECECE"/>
+
     <TextView
-        android:id="@+id/tv"
-        android:textColor="#000000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="正在学习"
         android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#3c3f41"/>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"/>
+        android:layout_height="400dp">
+
+        <RadioGroup
+            android:id="@+id/rg_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/word_book_All"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rb_1"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:background="@color/white"
+                android:buttonTint="@color/main_color"
+                android:text="选择四级单词书"
+                android:checked="true"
+                android:textSize="0sp" />
+
+            <RadioButton
+                android:id="@+id/rb_2"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/white"
+                android:buttonTint="@color/main_color"
+                android:text="选择六级单词书"
+                android:textSize="0sp" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/word_book_All"
+            android:layout_width="350dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/CET4"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/item_word_item_img_CET4"
+                        android:layout_width="95dp"
+                        android:layout_height="130dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/icon_cet4" />
+
+
+                    <TextView
+                        android:id="@+id/item_word_book_head_text_CET4"
+                        android:layout_width="185dp"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/item_word_item_img_CET4"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="15sp"
+                        android:text="四级考试大纲词表"
+                        android:textSize="20sp"
+                        android:textColor="@color/textColor"
+                        android:layout_toRightOf="@+id/item_word_item_img_CET4" />
+                    <TextView
+                        android:id="@+id/item_word_book_item_text_CET4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/item_word_item_img_CET4"
+                        android:layout_below="@+id/item_word_book_head_text_CET4"
+                        android:layout_marginBottom="15sp"
+                        android:text="6172词"
+                        android:textSize="16sp"
+                        android:textColor="@color/textColor"
+                        android:layout_toRightOf="@+id/item_word_item_img_CET4" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="15dp"
+                        android:src="@drawable/icon_boutique"
+                        android:layout_marginRight="15dp"
+                        android:layout_alignParentRight="true" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/CET4"
+                android:background="@color/white">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/item_word_item_img_CET6"
+                        android:layout_width="95dp"
+                        android:layout_height="130dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/icon_cet6" />
+
+
+                    <TextView
+                        android:id="@+id/item_word_book_head_text_CET6"
+                        android:layout_width="185dp"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/item_word_item_img_CET6"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="15sp"
+                        android:text="六级考试大纲词表"
+                        android:textSize="20sp"
+                        android:textColor="@color/textColor"
+                        android:layout_toRightOf="@+id/item_word_item_img_CET6" />
+                    <TextView
+                        android:id="@+id/item_word_book_item_text_CET6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/item_word_item_img_CET6"
+                        android:layout_below="@+id/item_word_book_head_text_CET6"
+                        android:layout_marginBottom="15sp"
+                        android:text="2167词"
+                        android:textSize="16sp"
+                        android:textColor="@color/textColor"
+                        android:layout_toRightOf="@+id/item_word_item_img_CET6" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="15dp"
+                        android:src="@drawable/icon_boutique"
+                        android:layout_marginRight="15dp"
+                        android:layout_alignParentRight="true" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
 
 
 </LinearLayout>
