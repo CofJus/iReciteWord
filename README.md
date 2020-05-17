@@ -82,7 +82,7 @@ playVoice(url);
 </pre>  
 
 ## Todo  
-背单词的流程实现
+背单词的流程实现  
 单词锁屏  
 学习进度  
 TranslateActivity页面  
