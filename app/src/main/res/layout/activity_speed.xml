@@ -38,37 +38,45 @@
         android:layout_height="wrap_content">
 
         <ImageButton
-            android:layout_width="139dp"
-            android:layout_height="172dp"
-            android:src="@mipmap/CET_4" />
+            android:layout_width="238dp"
+            android:layout_height="304dp"
+            android:src="@drawable/icon_cet4" />
+
         <LinearLayout
-            android:layout_width="247dp"
-            android:layout_height="199dp"
+            android:layout_width="172dp"
+            android:layout_height="233dp"
             android:orientation="vertical">
+
             <TextView
-                android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ACT核心词汇"
-                android:textSize="25dp" />
+                android:layout_marginTop="20dp"
+                android:text="四级词汇表"
+                android:textSize="25dp"
+                android:layout_marginLeft="10dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="总词数：5000"
-                android:textSize="25dp"/>
+                android:textSize="25dp"
+                android:layout_marginLeft="10dp"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:text="预计完成时间："
-                android:textSize="25dp" />
+                android:textSize="25dp"
+                android:layout_marginLeft="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2020.5.20"
-                android:textSize="20dp" />
-            </LinearLayout>
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
         </LinearLayout>
 <!--        来一个灰色条条-->
         <View
