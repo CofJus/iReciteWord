@@ -25,7 +25,7 @@ public class LearningSpeedActivity extends AppCompatActivity {
         tvTitle=findViewById(R.id.tv_title);
         ivBack=findViewById(R.id.iv_back);
         tvTitle.setText(content);
-        tv.setText("这是"+content+"界面");
+        //tv.setText("这是"+content+"界面");
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

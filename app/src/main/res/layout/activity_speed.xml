@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--Created by 李雪滢-->
+<!--2020.5.17-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.LearningSpeedActivity">
-
-<!--    /*-->
-<!--    * Created by 石倍瑜 on 2020.4.16-->
-<!--    */-->
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -21,8 +18,7 @@
             android:layout_height="30dp"
             android:background="@drawable/back"
             android:layout_marginLeft="20dp"
-            android:layout_centerVertical="true"
-            />
+            android:layout_centerVertical="true" />
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
@@ -35,13 +31,84 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#CECECE"/>
-    <TextView
-        android:id="@+id/tv"
-        android:textColor="#000000"
-        android:textSize="20sp"
+        android:background="#CECECE" />
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"/>
+        android:layout_height="wrap_content">
 
-</RelativeLayout>
+        <ImageButton
+            android:layout_width="139dp"
+            android:layout_height="172dp"
+            android:src="@mipmap/CET_4" />
+        <LinearLayout
+            android:layout_width="247dp"
+            android:layout_height="199dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ACT核心词汇"
+                android:textSize="25dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="总词数：5000"
+                android:textSize="25dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="预计完成时间："
+                android:textSize="25dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2020.5.20"
+                android:textSize="20dp" />
+            </LinearLayout>
+        </LinearLayout>
+<!--        来一个灰色条条-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="#E0E0E0"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"/>
+    <!--  我觉得这里的text应该写在java文件里面因为是可变的但是我不会写！-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="未学单词：5000"/>
+            <TextView
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已学单词：0"/>
+            <TextView
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="完成度：0%"/>
+        </LinearLayout>
+
+    <ProgressBar
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="5000"
+        android:progress="0"
+        android:progressDrawable="@drawable/progressbar_shape" />
+</LinearLayout>
+
