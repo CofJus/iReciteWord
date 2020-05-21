@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/lock_back"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="13:38"
+        android:textColor="#FFF"
+        android:textSize="50dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="40dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="11月10日  星期四"
+        android:textColor="#FFF"
+        android:textSize="20dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="40dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_marginTop="40dp">
+        <TextView
+            android:id="@+id/word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="parent"
+            android:textColor="#FFF"
+            android:textSize="50dp"
+            android:layout_centerHorizontal="true"
+            />
+        <ImageView
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:background="@mipmap/audio"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="60dp"/>
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="[perent]"
+        android:textColor="#FFF"
+        android:textSize="25dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="n.父亲(或母亲); (动、植物的) 亲本，
+        亲代，父本，母本; 创始机构; 母公司; 总部;"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#FFF"
+        android:textSize="20dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"/>
+
+
+</LinearLayout>
