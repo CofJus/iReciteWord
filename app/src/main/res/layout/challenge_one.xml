@@ -5,11 +5,12 @@
 <!--    /*-->
 <!--    * Created by 张佳豪 on 4.18-->
 <!--    */-->
-<!--    <ImageView-->
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="@string/开启我的打卡之旅"
-        android:background="@mipmap/backgroundofeveryword"/>
+        android:background="@mipmap/challenge1"
+        android:layout_marginTop="50dp"/>
     <ImageButton
         android:layout_width="50dp"
         android:layout_height="50dp"
