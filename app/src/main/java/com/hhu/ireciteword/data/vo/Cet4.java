@@ -8,6 +8,7 @@ import com.raizlabs.android.dbflow.annotation.Table;
 @Table(database = VocabularyDatabase.class)
 public class Cet4 {
 
+    @Column
     @PrimaryKey
     private int id;
 
