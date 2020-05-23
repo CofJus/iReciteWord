@@ -10,6 +10,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.hhu.ireciteword.R;
+import com.hhu.ireciteword.data.dao.RecordDao;
+import com.hhu.ireciteword.data.vo.Record;
+
+import static com.hhu.ireciteword.data.DaoFactory.getRecordDaoInstance;
 
 public class SettingActivity extends AppCompatActivity {
 
@@ -49,7 +53,11 @@ public class SettingActivity extends AppCompatActivity {
         findViewById(R.id.btnStartSentece).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SettingActivity.this, com.hhu.ireciteword.TranslateActivity.class));
+                Record record = new Record();
+                record.setTitleName("example");
+                record.setTextBody("例子，example");
+                RecordDao recordDao=getRecordDaoInstance();
+                recordDao.insert(record);
             }
         });
 

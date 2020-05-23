@@ -1,12 +1,29 @@
 package com.hhu.ireciteword.data.vo;
 
+import com.hhu.ireciteword.data.VocabularyDatabase;
+import com.raizlabs.android.dbflow.annotation.Column;
+import com.raizlabs.android.dbflow.annotation.PrimaryKey;
+import com.raizlabs.android.dbflow.annotation.Table;
+import com.raizlabs.android.dbflow.structure.BaseModel;
+
 /**
  * created by 沈思彤 on 2020/5/13
  */
-public class Record {
+
+@Table(database = VocabularyDatabase.class)
+public class Record extends BaseModel {
+
+    @Column
+    @PrimaryKey(autoincrement = true)
     private Integer id;
+
+    @Column
     private String titleName;
+
+    @Column
     private String textBody;
+
+    @Column
     private String createTime;
 
     public Integer getId() {
