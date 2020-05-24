@@ -14,6 +14,7 @@ import com.raizlabs.android.dbflow.structure.BaseModel;
 @Table(database = VocabularyDatabase.class)
 public class LookUpResult extends BaseModel {
 
+    @Column
     @PrimaryKey
     private String word;
 
