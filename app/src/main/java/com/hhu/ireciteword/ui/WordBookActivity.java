@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.hhu.ireciteword.MyApp;
 import com.hhu.ireciteword.R;
 
 public class WordBookActivity extends AppCompatActivity {
@@ -44,7 +45,13 @@ public class WordBookActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 RadioButton radioButton = group.findViewById(checkedId);
+
+                MyApp myApp = new MyApp();
+                myApp.setWordBook((String) radioButton.getText());
+
                 Toast.makeText(WordBookActivity.this,radioButton.getText(),Toast.LENGTH_SHORT).show();
+
+
             }
         });
     }

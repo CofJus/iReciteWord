@@ -19,11 +19,11 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:background="@color/background_grey"
         android:layout_marginBottom="50dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/background_grey"
             android:orientation="vertical">
 
             <LinearLayout
@@ -99,40 +99,12 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/ll_notice"
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/white"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:background="@drawable/icon_notice"
-                    android:layout_marginLeft="20dp"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="通知"
-                    android:textColor="@color/textColor"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="20dp"/>
 
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:background="@drawable/next"
-                    android:layout_marginLeft="260dp"
-                    />
-            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 android:background="@color/white"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
                 <LinearLayout
@@ -200,31 +172,11 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="50dp"
                 android:background="@color/white"
                 android:orientation="vertical"
-                android:layout_marginTop="10dp">
-                <LinearLayout
-                    android:id="@+id/ll_import"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:text="导入单词书"
-                        android:layout_marginLeft="40dp"
-                        android:textSize="20sp"
-                        android:textColor="@color/textColor"/>
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:background="@drawable/next"
-                        android:layout_marginRight="20dp" />
-                </LinearLayout>
+                android:layout_marginTop="15dp">
+
 
                 <LinearLayout
                     android:id="@+id/ll_Lock"
@@ -251,7 +203,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:orientation="vertical"

@@ -16,12 +16,10 @@ import androidx.viewpager.widget.ViewPager;
 import com.hhu.ireciteword.ui.Dakachallenge_back;
 import com.hhu.ireciteword.ui.HeaderActivity;
 import com.hhu.ireciteword.ui.HelpActivity;
-import com.hhu.ireciteword.ui.ImportWordBookActivity;
 import com.hhu.ireciteword.ui.LearningSpeedActivity;
 import com.hhu.ireciteword.ui.ListwordBackHome;
 import com.hhu.ireciteword.ui.LockScreenWordsActivity;
 import com.hhu.ireciteword.ui.MyPagerAdapter;
-import com.hhu.ireciteword.ui.NoticeActivity;
 import com.hhu.ireciteword.ui.SentenceActivity;
 import com.hhu.ireciteword.ui.SettingActivity;
 import com.hhu.ireciteword.ui.WordBookActivity;
@@ -48,11 +46,10 @@ public class MainActivity extends AppCompatActivity {
     RadioButton rbChat, rbDiscover, rbMe;
     RadioGroup radioGroup;
 
-    private LinearLayout llNotice;         //通知
+
     private LinearLayout llWordBook;       //单词书
     private LinearLayout llNewWordList;    //生词本
     private LinearLayout llLearningSpeed;  //学习进度
-    private LinearLayout llImport;         //导入单词书
     private LinearLayout llLockScreenWord;  //锁屏单词
     private LinearLayout llHelp;            //帮助与反馈
     private LinearLayout llSetting;         //设置
@@ -89,13 +86,12 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(pagerAdapter);
 
 
-        llNotice = view1.findViewById(R.id.ll_notice);
+
         llWordBook = view1.findViewById(R.id.ll_word_book);
         llHeader = view1.findViewById(R.id.iv_header);
         llDailyAttendance = view1.findViewById(R.id.ll_daily_attendance);
         llNewWordList = view1.findViewById(R.id.ll_new_word_list);
         llLearningSpeed = view1.findViewById(R.id.ll_learning_speed);
-        llImport = view1.findViewById(R.id.ll_import);
         llLockScreenWord = view1.findViewById(R.id.ll_Lock);
         llHelp = view1.findViewById(R.id.ll_help);
         llSetting = view1.findViewById(R.id.ll_setting);
@@ -219,13 +215,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void setListeners() {              //实现点击事件的方法
         OnClick onClick = new OnClick();
-        llNotice.setOnClickListener(onClick);
         llWordBook.setOnClickListener(onClick);
         llHeader.setOnClickListener(onClick);
         llDailyAttendance.setOnClickListener(onClick);
         llSetting.setOnClickListener(onClick);
         llLearningSpeed.setOnClickListener(onClick);
-        llImport.setOnClickListener(onClick);
         llHelp.setOnClickListener(onClick);
         llLockScreenWord.setOnClickListener(onClick);
         llNewWordList.setOnClickListener(onClick);
@@ -239,12 +233,9 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = null;
             switch (v.getId()) {
 
-                case R.id.ll_notice:
-                    //跳转到通知页面，下同
-                    intent = new Intent(MainActivity.this, NoticeActivity.class);
-                    intent.putExtra("content", "通知");
-                    break;
+
                 case R.id.ll_word_book:
+                    //跳转到单词书页面，下同
                     intent = new Intent(MainActivity.this, WordBookActivity.class);
                     intent.putExtra("content", "单词书");
                     break;
@@ -263,10 +254,6 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.ll_learning_speed:
                     intent = new Intent(MainActivity.this, LearningSpeedActivity.class);
                     intent.putExtra("content", "学习进度");
-                    break;
-                case R.id.ll_import:
-                    intent = new Intent(MainActivity.this, ImportWordBookActivity.class);
-                    intent.putExtra("content", "导入单词书");
                     break;
                 case R.id.ll_Lock:
                     intent = new Intent(MainActivity.this, LockScreenWordsActivity.class);
