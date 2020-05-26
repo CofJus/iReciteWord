@@ -17,17 +17,17 @@ import java.io.OutputStream;
 public class MyApp extends Application {
 
     /** 每日目标 */
-    private int target;
+    private static int target;
 
     /** 当前选择的词汇书 */
-    private String wordBook;
+    private static String wordBook;
 
     public String getWordBook() {
         return wordBook;
     }
 
     public void setWordBook(String wordBook) {
-        this.wordBook = wordBook;
+        wordBook = wordBook;
     }
 
     public int getTarget() {
@@ -35,7 +35,7 @@ public class MyApp extends Application {
     }
 
     public void setTarget(int target) {
-        this.target = target;
+        target = target;
     }
 
     @Override
