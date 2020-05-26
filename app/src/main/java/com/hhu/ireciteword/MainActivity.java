@@ -1,6 +1,7 @@
 package com.hhu.ireciteword;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.hhu.ireciteword.data.dao.Cet4Dao;
+import com.hhu.ireciteword.data.dao.Cet6Dao;
+import com.hhu.ireciteword.data.vo.Cet4;
+import com.hhu.ireciteword.data.vo.Cet6;
 import com.hhu.ireciteword.ui.Dakachallenge_back;
 import com.hhu.ireciteword.ui.HeaderActivity;
 import com.hhu.ireciteword.ui.HelpActivity;
@@ -28,6 +33,9 @@ import com.hhu.ireciteword.ui.Word_recite1;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.hhu.ireciteword.data.DaoFactory.getCet4DaoInstance;
+import static com.hhu.ireciteword.data.DaoFactory.getCet6DaoInstance;
+
 /*
  * 石倍瑜 2020/4/16：
  * class OnClick()
@@ -39,6 +47,9 @@ import java.util.List;
  */
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String CET4 = "四级";
+    private static final String CET6 = "六级";
 
     ViewPager viewPager;
     List<View> lsViews = new ArrayList<>();//声明ViewPager需要使用的View对象
@@ -86,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(pagerAdapter);
 
 
-
         llWordBook = view1.findViewById(R.id.ll_word_book);
         llHeader = view1.findViewById(R.id.iv_header);
         llDailyAttendance = view1.findViewById(R.id.ll_daily_attendance);
@@ -127,6 +137,17 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
 
+                            SharedPreferences myPreference = getSharedPreferences("preference", MODE_PRIVATE);
+                            String wordBook = myPreference.getString("book", "");
+                            int target = 10;
+                            //int target=myPreference.getInt("target", 0);
+                            if (CET4.equals(wordBook)) {
+                                Cet4Dao cet4Dao = getCet4DaoInstance();
+                                List<Cet4> list = cet4Dao.randomQuery(target);
+                            } else if (CET6.equals(wordBook)) {
+                                Cet6Dao cet6Dao = getCet6DaoInstance();
+                                List<Cet6> list = cet6Dao.randomQuery(target);
+                            }
                             Intent it = new Intent(MainActivity.this, Word_recite1.class);
 
                             startActivity(it);
