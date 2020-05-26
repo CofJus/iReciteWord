@@ -126,7 +126,9 @@ public class MainActivity extends AppCompatActivity {
                     btnStart.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+
                             Intent it = new Intent(MainActivity.this, Word_recite1.class);
+
                             startActivity(it);
                             Toast.makeText(MainActivity.this, "进入背单词界面", Toast.LENGTH_LONG).show();
                         }
