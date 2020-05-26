@@ -66,12 +66,12 @@
                     android:textColor="@color/black_1"
                     android:textSize="20sp"
                     android:layout_marginLeft="20dp" />
-                <EditText
+                <com.hhu.ireciteword.ui.LastInputEditText
                     android:id="@+id/ed_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="number"
-                    android:hint="50"
+                    android:text="50"
                     android:textColor="@color/main_color"
                     android:textSize="20sp"/>
                 <TextView
@@ -104,7 +104,7 @@
                     android:textSize="20sp"
                     android:textColor="@color/black_1"
                     android:layout_marginLeft="20dp"/>
-                <EditText
+                <com.hhu.ireciteword.ui.LastInputEditText
                     android:id="@+id/et_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

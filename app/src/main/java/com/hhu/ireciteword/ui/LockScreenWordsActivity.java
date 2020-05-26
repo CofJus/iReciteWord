@@ -9,6 +9,11 @@ import android.widget.TextView;
 
 import com.hhu.ireciteword.R;
 
+/**
+ * 锁屏设置(部分) Activity
+ * @author 石倍瑜
+ * @date 2020/3/27
+ */
 public class LockScreenWordsActivity extends AppCompatActivity {
 
     private TextView tv;
@@ -35,7 +40,5 @@ public class LockScreenWordsActivity extends AppCompatActivity {
         });
 
 
-
-        //其余功能参考"SettingScreenActivity"
     }
 }
