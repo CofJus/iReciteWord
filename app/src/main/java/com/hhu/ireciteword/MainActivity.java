@@ -13,8 +13,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import com.hhu.ireciteword.data.dao.Cet4Dao;
-import com.hhu.ireciteword.data.vo.Cet4;
 import com.hhu.ireciteword.ui.Dakachallenge_back;
 import com.hhu.ireciteword.ui.HeaderActivity;
 import com.hhu.ireciteword.ui.HelpActivity;
@@ -29,8 +27,6 @@ import com.hhu.ireciteword.ui.Word_recite1;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.hhu.ireciteword.data.DaoFactory.getCet4DaoInstance;
 
 /*
  * 石倍瑜 2020/4/16：
@@ -130,10 +126,6 @@ public class MainActivity extends AppCompatActivity {
                     btnStart.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            MyApp myApp = new MyApp();
-                            myApp.setTarget(10);
-                            Cet4Dao cet4Dao=getCet4DaoInstance();
-                            List<Cet4> list=cet4Dao.randomQuery(myApp.getTarget());
 
                             Intent it = new Intent(MainActivity.this, Word_recite1.class);
 

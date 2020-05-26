@@ -16,28 +16,6 @@ import java.io.OutputStream;
 
 public class MyApp extends Application {
 
-    /** 每日目标 */
-    private static int target;
-
-    /** 当前选择的词汇书 */
-    private static String wordBook;
-
-    public String getWordBook() {
-        return wordBook;
-    }
-
-    public void setWordBook(String wordBook) {
-        wordBook = wordBook;
-    }
-
-    public int getTarget() {
-        return target;
-    }
-
-    public void setTarget(int target) {
-        target = target;
-    }
-
     @Override
     public void onCreate() {
         super.onCreate();
