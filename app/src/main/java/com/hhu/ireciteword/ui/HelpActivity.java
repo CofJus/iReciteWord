@@ -9,6 +9,11 @@ import android.widget.TextView;
 
 import com.hhu.ireciteword.R;
 
+/**
+ * 帮助 Activity
+ * @author 石倍瑜
+ * @date 2020/4
+ */
 public class HelpActivity extends AppCompatActivity {
 
     private TextView tv;

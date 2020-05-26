@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
                     btnCalendar.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent it = new Intent(MainActivity.this, com.hhu.ireciteword.ui.Calendar.class);
+                            Intent it = new Intent(MainActivity.this, SignActivity.class);
                             startActivity(it);
                             Toast.makeText(MainActivity.this, "进入打卡日历", Toast.LENGTH_LONG).show();
                         }
@@ -267,7 +267,7 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("content", "头像");
                     break;
                 case R.id.ll_daily_attendance:
-                    intent = new Intent(MainActivity.this, com.hhu.ireciteword.ui.Calendar.class);
+                    intent = new Intent(MainActivity.this, SignActivity.class);
                     intent.putExtra("content", "打卡");
                     break;
                 case R.id.ll_new_word_list:

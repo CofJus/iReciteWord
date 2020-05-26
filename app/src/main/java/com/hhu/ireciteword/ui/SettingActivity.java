@@ -15,6 +15,12 @@ import com.hhu.ireciteword.data.vo.Record;
 
 import static com.hhu.ireciteword.data.DaoFactory.getRecordDaoInstance;
 
+/**
+ * 设置 Activity
+ * @author 石倍瑜
+ * @date 2020/4
+ */
+
 public class SettingActivity extends AppCompatActivity {
 
     private TextView tvTitle;
