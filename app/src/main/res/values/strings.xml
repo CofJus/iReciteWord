@@ -17,5 +17,6 @@
     <string name="开启我的打卡之旅">开启我的打卡之旅</string>
     <string name="play_the_voice" />
     <string name="Translate" />
+    <string name="create_button_name">+\n新建</string>
 
 </resources>

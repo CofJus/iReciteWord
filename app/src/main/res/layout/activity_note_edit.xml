@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Created by 沈思彤-->
+<!--2020.4.30-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/headLayout"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textColor="#3366cc"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:text="单词笔记"
+            />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/edit_title_lay_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/edit_title_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:hint="时间"
+                />
+
+            <LinearLayout
+                android:id="@+id/edit_title_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="单词："
+                    android:textSize="15sp"
+                    />
+                <EditText
+                    android:id="@+id/edit_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:hint="请输入单词.."
+
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edit_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/button_save"
+            android:layout_below="@id/edit_title_lay_lay"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="3dp"
+            android:gravity="start"
+            android:hint="请记录笔记.."
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:background="#FFFAFA"
+            android:text="返回"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            />
+
+
+
+
+
+        <Button
+            android:id="@+id/button_save"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="#FFFAFA"
+            android:text="保存"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

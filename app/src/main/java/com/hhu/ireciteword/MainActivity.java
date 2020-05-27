@@ -17,7 +17,7 @@ import com.hhu.ireciteword.ui.Dakachallenge_back;
 import com.hhu.ireciteword.ui.HeaderActivity;
 import com.hhu.ireciteword.ui.HelpActivity;
 import com.hhu.ireciteword.ui.LearningSpeedActivity;
-import com.hhu.ireciteword.ui.ListwordBackHome;
+
 import com.hhu.ireciteword.ui.LockScreenWordsActivity;
 import com.hhu.ireciteword.ui.MyPagerAdapter;
 import com.hhu.ireciteword.ui.SentenceActivity;
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                     button_wordlist.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent it = new Intent(MainActivity.this, ListwordBackHome.class);
+                            Intent it = new Intent(MainActivity.this, NoteMainActivity.class);
                             startActivity(it);
                             Toast.makeText(MainActivity.this, "进入单词界面", Toast.LENGTH_LONG).show();
 
@@ -248,7 +248,7 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("content", "打卡");
                     break;
                 case R.id.ll_new_word_list:
-                    intent = new Intent(MainActivity.this, ListwordBackHome.class);
+                    intent = new Intent(MainActivity.this, NoteMainActivity.class);
                     intent.putExtra("content", "生词本");
                     break;
                 case R.id.ll_learning_speed:

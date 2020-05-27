@@ -22,7 +22,6 @@
         <activity android:name=".ui.LearningSpeedActivity" />
         <activity android:name=".ui.WordBookActivity" />
         <activity android:name=".ui.HeaderActivity" />
-        <activity android:name=".ui.ListwordBackHome"/>
         <activity android:name=".ui.Word_recite1"/>
         <activity android:name=".ui.Calendar"/>
         <activity android:name=".ui.Word_recite2"/>
@@ -41,6 +40,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".SignActivity"/>
+        <activity android:name=".EditActivity"/>
+        <activity android:name=".AmendActivity"/>
+        <activity android:name=".NoteMainActivity"/>
     </application>
 
 </manifest>
