@@ -1,4 +1,4 @@
-package com.hhu.ireciteword.sign;
+package com.hhu.ireciteword.data.sign;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

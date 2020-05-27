@@ -1,4 +1,4 @@
-package com.hhu.ireciteword;
+package com.hhu.ireciteword.ui;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
@@ -14,6 +14,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.hhu.ireciteword.R;
+import com.hhu.ireciteword.data.sign.DateAdapter;
+import com.hhu.ireciteword.utils.DateUtil;
 import com.hhu.ireciteword.view.MonPickerDialog;
 import com.hhu.ireciteword.view.SignView;
 
@@ -21,7 +24,6 @@ import java.util.Calendar;
 
 /**
  *created by 沈思彤 on 2020/5/20
- *
  */
 public class SignActivity extends AppCompatActivity {
 

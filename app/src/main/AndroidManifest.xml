@@ -24,7 +24,6 @@
         <activity android:name=".ui.HeaderActivity" />
         <activity android:name=".ui.ListwordBackHome"/>
         <activity android:name=".ui.Word_recite1"/>
-        <activity android:name=".ui.Calendar"/>
         <activity android:name=".ui.Word_recite2"/>
         <activity android:name=".ui.Word_information"/>
         <activity android:name=".ui.Search_word"/>
@@ -40,7 +39,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignActivity"/>
+        <activity android:name=".ui.SignActivity"/>
     </application>
 
 </manifest>

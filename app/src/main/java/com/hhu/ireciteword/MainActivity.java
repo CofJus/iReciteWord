@@ -27,9 +27,11 @@ import com.hhu.ireciteword.ui.LockScreenWordsActivity;
 import com.hhu.ireciteword.ui.MyPagerAdapter;
 import com.hhu.ireciteword.ui.SentenceActivity;
 import com.hhu.ireciteword.ui.SettingActivity;
+import com.hhu.ireciteword.ui.SignActivity;
 import com.hhu.ireciteword.ui.WordBookActivity;
 import com.hhu.ireciteword.ui.Word_recite1;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -137,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
 
+                            Intent it = new Intent(MainActivity.this, Word_recite1.class);
                             SharedPreferences myPreference = getSharedPreferences("preference", MODE_PRIVATE);
                             String wordBook = myPreference.getString("book", "");
                             int target = 10;
@@ -144,12 +147,12 @@ public class MainActivity extends AppCompatActivity {
                             if (CET4.equals(wordBook)) {
                                 Cet4Dao cet4Dao = getCet4DaoInstance();
                                 List<Cet4> list = cet4Dao.randomQuery(target);
+                                it.putExtra("wordList",(Serializable) list);
                             } else if (CET6.equals(wordBook)) {
                                 Cet6Dao cet6Dao = getCet6DaoInstance();
                                 List<Cet6> list = cet6Dao.randomQuery(target);
+                                it.putExtra("wordList",(Serializable) list);
                             }
-                            Intent it = new Intent(MainActivity.this, Word_recite1.class);
-
                             startActivity(it);
                             Toast.makeText(MainActivity.this, "进入背单词界面", Toast.LENGTH_LONG).show();
                         }

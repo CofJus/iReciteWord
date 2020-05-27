@@ -1,4 +1,4 @@
-package com.hhu.ireciteword;
+package com.hhu.ireciteword.data.sign;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -11,7 +11,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.hhu.ireciteword.sign.SignInHelper;
+import com.hhu.ireciteword.R;
+import com.hhu.ireciteword.utils.DateUtil;
 
 import java.util.ArrayList;
 import java.util.List;
