@@ -37,7 +37,6 @@ public class Word_recite1 extends AppCompatActivity {
         if ("四级".equals(myPreference.getString("wordBook", ""))) {
             @SuppressWarnings("unchecked")
             List<Cet4> list = (List<Cet4>) getIntent().getSerializableExtra("wordList");
-            assert list != null;
             for (Cet4 cet4 : list) {
                 System.out.println(cet4.getWord());
             }
