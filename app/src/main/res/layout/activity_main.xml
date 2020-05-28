@@ -77,28 +77,4 @@
             android:textColor="@color/radiobutton_textcolor" />
     </RadioGroup>
 
-    <Button
-        android:id="@+id/btnStartService"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="@string/start"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnStopService"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/main_vp"
-        app:layout_constraintVertical_bias="0.3" />
-
-    <Button
-        android:id="@+id/btnStopService"
-        android:layout_width="31dp"
-        android:layout_height="51dp"
-        android:text="@string/stop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

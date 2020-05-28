@@ -9,6 +9,11 @@ import android.widget.TextView;
 
 import com.hhu.ireciteword.R;
 
+/**
+ * 个人资料 Activity
+ * @author 石倍瑜
+ * @date 2020/4
+ */
 public class HeaderActivity extends AppCompatActivity {
 
     private TextView tvTitle;

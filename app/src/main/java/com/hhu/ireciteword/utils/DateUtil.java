@@ -1,4 +1,4 @@
-package com.hhu.ireciteword;
+package com.hhu.ireciteword.utils;
 
 
 import java.text.ParseException;
@@ -100,5 +100,4 @@ public class DateUtil {
         }
         return record;
     }
-
 }
