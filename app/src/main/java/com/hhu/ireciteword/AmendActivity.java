@@ -16,7 +16,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 
 import com.hhu.ireciteword.data.MyDB;
-import com.hhu.ireciteword.enity.NoteRecord;
+import com.hhu.ireciteword.data.vo.Record;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -35,7 +35,7 @@ public class AmendActivity extends BaseActivity implements View.OnClickListener{
     private TextView amendTime;
     private TextView amendTitle;
     private EditText amendBody;
-    private NoteRecord noteRecord;
+    private Record noteRecord;
     private AlertDialog.Builder dialog;
 
 
@@ -100,19 +100,16 @@ public class AmendActivity extends BaseActivity implements View.OnClickListener{
         Intent intent = this.getIntent();
         if (intent!=null){
 
-            noteRecord = new NoteRecord();
+            noteRecord = new  Record();
 
             noteRecord.setId(Integer.valueOf(intent.getStringExtra(MyDB.RECORD_ID)));
             noteRecord.setTitleName(intent.getStringExtra(MyDB.RECORD_TITLE));
             noteRecord.setTextBody(intent.getStringExtra(MyDB.RECORD_BODY));
             noteRecord.setCreateTime(intent.getStringExtra(MyDB.RECORD_TIME));
-            noteRecord.setNoticeTime(intent.getStringExtra(MyDB.NOTICE_TIME));
 
             amendTitle.setText(noteRecord.getTitleName());
             String str="";
-            if (noteRecord.getNoticeTime()!=null){
-                str = "    提醒时间："+ noteRecord.getNoticeTime();
-            }
+
             amendTime.setText(noteRecord.getCreateTime()+str);
             amendBody.setText(noteRecord.getTextBody());
         }

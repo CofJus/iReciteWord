@@ -22,7 +22,8 @@ import androidx.appcompat.app.AlertDialog;
 
 import com.hhu.ireciteword.Dateutil.DateFormatType;
 import com.hhu.ireciteword.data.MyDB;
-import com.hhu.ireciteword.enity.NoteRecord;
+import com.hhu.ireciteword.data.vo.Record;
+
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -67,16 +68,16 @@ public class NoteMainActivity extends BaseActivity implements View.OnClickListen
 
         myListView = findViewById(R.id.list_view);
 
-        List<NoteRecord> noteRecordList = new ArrayList<>();
+        List<Record> noteRecordList = new ArrayList<>();
         myDB = new MyDB(this);
         SQLiteDatabase db = myDB.getReadableDatabase();
         Cursor cursor = db.query(MyDB.TABLE_NAME_RECORD,null,
                 null,null,null,
                 null, MyDB.NOTICE_TIME+","+ MyDB.RECORD_TIME+" DESC");
         if(cursor.moveToFirst()){
-            NoteRecord noteRecord;
+            Record noteRecord;
             while (!cursor.isAfterLast()){
-                noteRecord = new NoteRecord();
+                noteRecord = new  Record();
                 noteRecord.setId(
                         Integer.valueOf(cursor.getString(cursor.getColumnIndex(MyDB.RECORD_ID))));
                 noteRecord.setTitleName(
@@ -87,8 +88,7 @@ public class NoteMainActivity extends BaseActivity implements View.OnClickListen
                 );
                 noteRecord.setCreateTime(
                         cursor.getString(cursor.getColumnIndex(MyDB.RECORD_TIME)));
-                noteRecord.setNoticeTime(
-                        cursor.getString(cursor.getColumnIndex(MyDB.NOTICE_TIME)));
+
                 noteRecordList.add(noteRecord);
                 cursor.moveToNext();
             }
@@ -119,26 +119,24 @@ public class NoteMainActivity extends BaseActivity implements View.OnClickListen
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(NoteMainActivity.this, AmendActivity.class);
-        NoteRecord noteRecord = (NoteRecord) myListView.getItemAtPosition(position);
+        Record noteRecord = ( Record) myListView.getItemAtPosition(position);
         intent.putExtra(MyDB.RECORD_TITLE, noteRecord.getTitleName().trim());
         intent.putExtra(MyDB.RECORD_BODY, noteRecord.getTextBody().trim());
         intent.putExtra(MyDB.RECORD_TIME, noteRecord.getCreateTime().trim());
         intent.putExtra(MyDB.RECORD_ID, noteRecord.getId().toString().trim());
-        if (noteRecord.getNoticeTime()!=null) {
-            intent.putExtra(MyDB.NOTICE_TIME, noteRecord.getNoticeTime().trim());
-        }
+
         this.startActivity(intent);
         NoteMainActivity.this.finish();
     }
 
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-        NoteRecord noteRecord = (NoteRecord) myListView.getItemAtPosition(position);
+        Record noteRecord = ( Record) myListView.getItemAtPosition(position);
         showDialog(noteRecord,position);
         return true;
     }
 
-    void showDialog(final NoteRecord noteRecord, final int position){
+    void showDialog(final  Record noteRecord, final int position){
 
         final AlertDialog.Builder dialog =
                 new AlertDialog.Builder(NoteMainActivity.this);
@@ -179,11 +177,11 @@ public class NoteMainActivity extends BaseActivity implements View.OnClickListen
      * ListView展示的适配器类
      */
     class MyBaseAdapter extends BaseAdapter {
-        private List<NoteRecord> noteRecordList;//数据集合
+        private List< Record> noteRecordList;//数据集合
         private Context context;
         private int layoutId;
 
-        public MyBaseAdapter(Context context, List<NoteRecord> noteRecordList, int layoutId){
+        public MyBaseAdapter(Context context, List< Record> noteRecordList, int layoutId){
             this.context = context;
             this.noteRecordList = noteRecordList;
             this.layoutId = layoutId;
@@ -230,7 +228,7 @@ public class NoteMainActivity extends BaseActivity implements View.OnClickListen
             } else {
                 viewHolder = (ViewHolder) convertView.getTag();
             }
-            NoteRecord noteRecord = noteRecordList.get(position);
+            Record noteRecord = noteRecordList.get(position);
             String tile = noteRecord.getTitleName();
             viewHolder.titleView.setText((position+1)+"."+(tile.length()>7?tile.substring(0,7)+"...":tile));
 //            viewHolder.titleView.setText(tile);
