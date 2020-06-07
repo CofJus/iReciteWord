@@ -42,26 +42,7 @@ public class Dakachallenge_back extends AppCompatActivity {
         });
 
 
-        Button tochallengetwo = (Button) findViewById(R.id.打卡挑战二);
-        tochallengetwo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent it =new Intent(Dakachallenge_back.this, Challengetwo_back.class);
-                startActivity(it);
-                Toast.makeText(Dakachallenge_back.this,"你进入打卡挑战二",Toast.LENGTH_LONG).show();
-            }
-        });
 
-
-        Button tochallengethree = (Button) findViewById(R.id.打卡挑战三);
-        tochallengethree.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent it =new Intent(Dakachallenge_back.this, Challengethree_back.class);
-                startActivity(it);
-                Toast.makeText(Dakachallenge_back.this,"你进入打卡挑战三",Toast.LENGTH_LONG).show();
-            }
-        });
 
 
 

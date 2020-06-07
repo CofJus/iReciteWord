@@ -21,13 +21,10 @@ public class Word_information extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-
         Intent intent=getIntent();
-
-
-
         //单词详情页
         setContentView(R.layout.word_information);
+
         findViewById(R.id.back2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

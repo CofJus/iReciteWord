@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.hhu.ireciteword">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -14,7 +15,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".TranslateActivity"/>
         <activity android:name=".ui.SentenceActivity" />
-
         <activity android:name=".ui.StudySettingActivity"/>
         <activity android:name=".ui.SettingActivity" />
         <activity android:name=".ui.HelpActivity" />
@@ -32,23 +32,22 @@
         <activity android:name=".ui.Challengethree_back"/>
         <activity android:name=".ui.loginActivity"/>
         <activity android:name=".ui.RegisterActivity"/>
-        <activity android:name=".ui.User"/>
-        <activity android:name=".ui.DBOpenHelper"/>
+        <activity android:name=".ui.User"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".ui.DBOpenHelper"
+            tools:ignore="Instantiatable" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".SignActivity"/>
         <activity android:name=".EditActivity"/>
         <activity android:name=".AmendActivity"/>
         <activity android:name=".NoteMainActivity"/>
-
         <activity android:name=".ui.SignActivity"/>
+
 
     </application>
 
