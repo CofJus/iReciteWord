@@ -1,6 +1,7 @@
 package com.hhu.ireciteword;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,20 +14,29 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.hhu.ireciteword.data.dao.Cet4Dao;
+import com.hhu.ireciteword.data.dao.Cet6Dao;
+import com.hhu.ireciteword.data.vo.Cet4;
+import com.hhu.ireciteword.data.vo.Cet6;
 import com.hhu.ireciteword.ui.Dakachallenge_back;
 import com.hhu.ireciteword.ui.HeaderActivity;
 import com.hhu.ireciteword.ui.HelpActivity;
 import com.hhu.ireciteword.ui.LearningSpeedActivity;
-import com.hhu.ireciteword.ui.ListwordBackHome;
+
 import com.hhu.ireciteword.ui.LockScreenWordsActivity;
 import com.hhu.ireciteword.ui.MyPagerAdapter;
 import com.hhu.ireciteword.ui.SentenceActivity;
 import com.hhu.ireciteword.ui.SettingActivity;
+import com.hhu.ireciteword.ui.SignActivity;
 import com.hhu.ireciteword.ui.WordBookActivity;
 import com.hhu.ireciteword.ui.Word_recite1;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.hhu.ireciteword.data.DaoFactory.getCet4DaoInstance;
+import static com.hhu.ireciteword.data.DaoFactory.getCet6DaoInstance;
 
 /*
  * 石倍瑜 2020/4/16：
@@ -39,6 +49,9 @@ import java.util.List;
  */
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String CET4 = "四级";
+    private static final String CET6 = "六级";
 
     ViewPager viewPager;
     List<View> lsViews = new ArrayList<>();//声明ViewPager需要使用的View对象
@@ -86,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(pagerAdapter);
 
 
-
         llWordBook = view1.findViewById(R.id.ll_word_book);
         llHeader = view1.findViewById(R.id.iv_header);
         llDailyAttendance = view1.findViewById(R.id.ll_daily_attendance);
@@ -115,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                     button_wordlist.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent it = new Intent(MainActivity.this, ListwordBackHome.class);
+                            Intent it = new Intent(MainActivity.this, NoteMainActivity.class);
                             startActivity(it);
                             Toast.makeText(MainActivity.this, "进入单词界面", Toast.LENGTH_LONG).show();
 
@@ -128,7 +140,19 @@ public class MainActivity extends AppCompatActivity {
                         public void onClick(View v) {
 
                             Intent it = new Intent(MainActivity.this, Word_recite1.class);
-
+                            SharedPreferences myPreference = getSharedPreferences("preference", MODE_PRIVATE);
+                            String wordBook = myPreference.getString("book", "");
+                            int target = 10;
+                            //int target=myPreference.getInt("target", 0);
+                            if (CET4.equals(wordBook)) {
+                                Cet4Dao cet4Dao = getCet4DaoInstance();
+                                List<Cet4> list = cet4Dao.randomQuery(target);
+                                it.putExtra("wordList",(Serializable) list);
+                            } else if (CET6.equals(wordBook)) {
+                                Cet6Dao cet6Dao = getCet6DaoInstance();
+                                List<Cet6> list = cet6Dao.randomQuery(target);
+                                it.putExtra("wordList",(Serializable) list);
+                            }
                             startActivity(it);
                             Toast.makeText(MainActivity.this, "进入背单词界面", Toast.LENGTH_LONG).show();
                         }
@@ -138,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
                     btnCalendar.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent it = new Intent(MainActivity.this, com.hhu.ireciteword.ui.Calendar.class);
+                            Intent it = new Intent(MainActivity.this, SignActivity.class);
                             startActivity(it);
                             Toast.makeText(MainActivity.this, "进入打卡日历", Toast.LENGTH_LONG).show();
                         }
@@ -246,11 +270,11 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("content", "头像");
                     break;
                 case R.id.ll_daily_attendance:
-                    intent = new Intent(MainActivity.this, com.hhu.ireciteword.ui.Calendar.class);
+                    intent = new Intent(MainActivity.this, SignActivity.class);
                     intent.putExtra("content", "打卡");
                     break;
                 case R.id.ll_new_word_list:
-                    intent = new Intent(MainActivity.this, ListwordBackHome.class);
+                    intent = new Intent(MainActivity.this, NoteMainActivity.class);
                     intent.putExtra("content", "生词本");
                     break;
                 case R.id.ll_learning_speed:

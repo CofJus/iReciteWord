@@ -4,9 +4,12 @@ import com.hhu.ireciteword.data.VocabularyDatabase;
 import com.raizlabs.android.dbflow.annotation.Column;
 import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
+import com.raizlabs.android.dbflow.structure.BaseModel;
+
+import java.io.Serializable;
 
 @Table(database = VocabularyDatabase.class)
-public class Cet4 {
+public class Cet4 extends BaseModel implements Serializable {
 
     @Column
     @PrimaryKey
