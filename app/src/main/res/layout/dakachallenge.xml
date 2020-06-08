@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 <!--    /*-->
-<!--    * Created by 张佳豪 on 4.18-->
+<!--    * Created by 张佳豪 on 5.27-->
 <!--    */-->
 <ImageButton
     android:id="@+id/dakachallengeback"
@@ -23,7 +23,7 @@
 <ImageView
     android:id="@+id/top_picture"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="80dp"
     android:layout_marginTop="50dp"
     android:contentDescription="@string/打卡挑战"
     android:background="@mipmap/top_dakachallenge"
@@ -37,41 +37,136 @@
         <Button
             android:id="@+id/打卡挑战一"
             android:layout_width="match_parent"
-            android:layout_height="110dp"
+            android:layout_height="80dp"
             android:layout_below="@+id/top_picture"
-            android:text="@string/打卡挑战一"
+            android:text="每月挑战"
             android:textSize="25sp"
             android:background="@drawable/shape_page_home" />
-        <Button
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:layout_below="@+id/打卡挑战一"
-            android:layout_marginTop="10dp"
-            android:text="@string/打卡挑战二"
-            android:id="@+id/打卡挑战二"
+            android:layout_height="50dp"
+            android:text="设置你的本月目标"
+            android:layout_marginTop="210dp"
             android:textSize="25sp"
-            android:background="@drawable/shape_page_home" />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/打卡挑战三"
-            android:id="@+id/打卡挑战三"
-            android:textSize="25sp"
-            android:background="@drawable/shape_page_home"
-            android:layout_below="@+id/打卡挑战二"/>
-    <TextView
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="125dp"
-        android:layout_alignParentBottom="true"
-        android:text="@string/敬请期待"
-        android:textSize="45sp"
-        android:textColor="#000"
-        android:layout_below="@+id/打卡挑战三"
-        android:textAlignment="center"
-        android:gravity="center_horizontal" />
+        android:layout_height="200dp"
+        android:layout_marginTop="250dp">
+        <LinearLayout
+            android:id="@+id/datagroup1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/five"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:text="5天"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:textStyle="bold">
+            </TextView>
+            <TextView
+                android:id="@+id/ten"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_toRightOf="@+id/five"
+                android:layout_toEndOf="@+id/five"
+            android:text="10天"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:gravity="center">
+            </TextView>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/datagroup2"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/fifteen"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:text="15天"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:textStyle="bold">
+            </TextView>
+            <TextView
+                android:id="@+id/twenty"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_toRightOf="@+id/five"
+                android:layout_toEndOf="@+id/five"
+                android:text="20天"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:gravity="center">
+            </TextView>
+        </LinearLayout>
+        <RadioGroup
+            android:id="@+id/data_rg1"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+            <RadioButton
+                android:id="@+id/data_rb1"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="30dp">
+            </RadioButton>
+            <RadioButton
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="@+id/data_rb1">
+            </RadioButton>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+            <RadioButton
+                android:id="@+id/data_rb2"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="30dp">
+            </RadioButton>
+            <RadioButton
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_toRightOf="@id/data_rb2">
+            </RadioButton>
+            </LinearLayout>
+        </RadioGroup>
 
 
 
+
+
+
+</RelativeLayout>
+    <ProgressBar
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_marginTop="450dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="31"
+        android:progress="0"
+        android:progressDrawable="@drawable/progressbar_shape" />
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+android:layout_marginTop="480dp"
+    android:text="距离您本月目标还剩20天\n继续加油！"
+    android:textSize="25sp"
+    android:gravity="center">
+
+</TextView>
 
 </RelativeLayout>

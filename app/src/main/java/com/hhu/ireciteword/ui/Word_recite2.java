@@ -8,26 +8,27 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.hhu.ireciteword.R;
 
 //活动：用户点了不认识之后，弹出来例句提示
 public class Word_recite2 extends AppCompatActivity {
-    @Override
+
+
+
     public void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_recite2);
 
-        //通过按钮back4，跳转到上一个页面，主界面page_main
+        //通过按钮back4，跳转上一个页面，主界面page_main
         ImageButton btnBack4=(ImageButton)findViewById(R.id.back4);
         btnBack4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent it =new Intent(Word_recite2.this, com.hhu.ireciteword.MainActivity.class);
                 startActivity(it);
+
                 Toast.makeText(Word_recite2.this,"你进入下一个界面",Toast.LENGTH_LONG).show();
             }
 
@@ -40,6 +41,7 @@ public class Word_recite2 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent it =new Intent(Word_recite2.this,Search_word.class);
                 startActivity(it);
+
                 Toast.makeText(Word_recite2.this,"你进入下一个界面",Toast.LENGTH_LONG).show();
             }
         });
@@ -51,6 +53,7 @@ public class Word_recite2 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent it =new Intent(Word_recite2.this,Word_information.class);
                 startActivity(it);
+
                 Toast.makeText(Word_recite2.this,"你进入下一个界面",Toast.LENGTH_LONG).show();
             }
         });
@@ -62,9 +65,11 @@ public class Word_recite2 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent it =new Intent(Word_recite2.this,Word_information.class);
                 startActivity(it);
+
                 Toast.makeText(Word_recite2.this,"你进入单词详情页",Toast.LENGTH_LONG).show();
             }
         });
+
 
     }
 }

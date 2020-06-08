@@ -91,7 +91,7 @@
                 android:gravity="center"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:text="0min" />
+                android:id="@+id/time" />
         </LinearLayout>
     </LinearLayout>
     <ProgressBar
@@ -114,18 +114,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="moral"
+            android:id="@+id/wordview"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="48dp" />
+            android:textSize="48dp"
+            android:text="model"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="58dp"
             android:gravity="center"
-            android:text="/morel/"
+            android:id="@+id/Phonetic_sign"
             android:textColor="@color/color2"
-            android:textSize="26dp" />
+            android:textSize="26dp"
+            android:text="model"/>
 
 
     </LinearLayout>

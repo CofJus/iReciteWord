@@ -45,6 +45,7 @@ public class Word_recite1 extends AppCompatActivity {
             @SuppressWarnings("unchecked")
             List<Cet6> list=(List<Cet6>)getIntent().getSerializableExtra("wordList");
         }
+
         Log.v(TAG, "进入word_recite1");
         //通过按钮back1，跳转到上一个页面，主界面page_main
         ImageButton btnBack = (ImageButton) findViewById(R.id.back1);
