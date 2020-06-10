@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/white"
-    >
+    android:background="@android:color/white">
     <ImageButton
 
         android:id="@+id/bback"
@@ -24,15 +23,13 @@
         android:layout_marginStart="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        >
+        android:layout_marginBottom="10dp">
         <ListView
             android:id="@+id/list_view"
             android:layout_above="@id/createButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:dividerHeight="1dp"
-            >
+            android:dividerHeight="1dp">
         </ListView>
 
 
@@ -44,8 +41,7 @@
             android:text="@string/create_button_name"
             android:textSize="20sp"
             android:layout_centerInParent="true"
-            android:layout_alignParentBottom="true"
-            />
+            android:layout_alignParentBottom="true" />
     </RelativeLayout>
 
 
