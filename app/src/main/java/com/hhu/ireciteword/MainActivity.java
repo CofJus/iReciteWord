@@ -90,8 +90,6 @@ public class MainActivity extends AppCompatActivity {
         lsViews.add(getLayoutInflater().inflate(R.layout.page_home, null, false));
         lsViews.add(getLayoutInflater().inflate(R.layout.page_discover, null, false));
         lsViews.add(view1);
-
-
         lsViews.add(getLayoutInflater().inflate(R.layout.page_home, null, false));
         lsViews.add(getLayoutInflater().inflate(R.layout.page_discover, null, false));
         lsViews.add(getLayoutInflater().inflate(R.layout.page_me, null, false));
@@ -110,11 +108,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         setListeners();      //设置点击事件的方法
-
-
         pagerAdapter = new MyPagerAdapter(lsViews);
         viewPager.setAdapter(pagerAdapter);
-
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

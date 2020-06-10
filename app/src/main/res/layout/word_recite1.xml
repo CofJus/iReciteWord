@@ -91,7 +91,7 @@
                 android:gravity="center"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/time" />
+                android:text="0min" />
         </LinearLayout>
     </LinearLayout>
     <ProgressBar
@@ -111,23 +111,23 @@
         android:padding="20dp">
 
         <TextView
+            android:id="@+id/wordview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:id="@+id/wordview"
+
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="48dp"
-            android:text="model"/>
+            android:textSize="48dp" />
 
         <TextView
+            android:id="@+id/phonetic_sign"
             android:layout_width="match_parent"
             android:layout_height="58dp"
             android:gravity="center"
-            android:id="@+id/Phonetic_sign"
+
             android:textColor="@color/color2"
-            android:textSize="26dp"
-            android:text="model"/>
+            android:textSize="26dp" />
 
 
     </LinearLayout>
