@@ -62,7 +62,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="扇贝ID：23472347329"
+                        android:text="ID：23472347329"
                         android:layout_marginTop="10dp"
                         android:textColor="#CECECE"
                         android:textSize="14sp" />
@@ -211,7 +211,8 @@
                 <LinearLayout
                     android:id="@+id/ll_help"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:orientation="horizontal"
                     android:gravity="center_vertical">
                     <TextView
@@ -232,7 +233,8 @@
                 <LinearLayout
                     android:id="@+id/ll_setting"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:orientation="horizontal"
                     android:gravity="center_vertical">
                     <TextView
