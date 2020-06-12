@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/background_grey"
     tools:context=".ui.StudySettingActivity">
 
 <!--    /*-->
@@ -35,99 +36,101 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/background_grey" >
+        android:layout_height="130dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="单词设置"
+            android:textSize="15sp" />
+
         <LinearLayout
+            android:id="@+id/ll_new_word"
             android:layout_width="match_parent"
-            android:layout_height="130dp"
-            android:background="@color/white"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp" >
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:text="每日新学单词量"
+                android:textColor="@color/black_1"
+                android:textSize="20sp" />
+
+            <com.hhu.ireciteword.ui.LastInputEditText
+                android:id="@+id/ed_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="50"
+                android:textColor="@color/main_color"
+                android:textSize="20sp" />
+
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="单词设置"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="20dp"
-                android:textSize="15sp"/>
-            <LinearLayout
-                android:id="@+id/ll_new_word"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="每日新学单词量"
-                    android:textColor="@color/black_1"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="20dp" />
-                <com.hhu.ireciteword.ui.LastInputEditText
-                    android:id="@+id/ed_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:text="50"
-                    android:textColor="@color/main_color"
-                    android:textSize="20sp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="个"
-                    android:textSize="20sp"
-                    android:textColor="@color/main_color"
-                    android:layout_marginRight="20dp"
-                    />
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@drawable/next"/>
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:text="个"
+                android:textColor="@color/main_color"
+                android:textSize="20sp" />
 
-            <LinearLayout
-                android:id="@+id/ll_review_word"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="每日复习单词量"
-                    android:textSize="20sp"
-                    android:textColor="@color/black_1"
-                    android:layout_marginLeft="20dp"/>
-                <com.hhu.ireciteword.ui.LastInputEditText
-                    android:id="@+id/et_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:text="20"
-                    android:textColor="@color/main_color"
-                    android:textSize="20sp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="个"
-                    android:textSize="20sp"
-                    android:textColor="@color/main_color"
-                    android:layout_marginRight="20dp"
-                    />
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@drawable/next" />
-            </LinearLayout>
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/next" />
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/ll_review_word"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:text="每日复习单词量"
+                android:textColor="@color/black_1"
+                android:textSize="20sp" />
+
+            <com.hhu.ireciteword.ui.LastInputEditText
+                android:id="@+id/et_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="20"
+                android:textColor="@color/main_color"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:text="个"
+                android:textColor="@color/main_color"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/next" />
+        </LinearLayout>
     </LinearLayout>
+
 
 </LinearLayout>
