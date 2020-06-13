@@ -9,7 +9,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +22,7 @@ import com.hhu.ireciteword.data.WordDate;
 import com.hhu.ireciteword.data.dao.Cet4Dao;
 import com.hhu.ireciteword.data.vo.Cet4;
 
+import java.io.Serializable;
 import java.util.List;
 
 import static com.hhu.ireciteword.data.DaoFactory.getCet4DaoInstance;
@@ -35,15 +35,16 @@ public class Word_information extends AppCompatActivity {
     TextView exampleView;
 
     @Override
-    public void onCreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_information);
 
         initView();
+
         new Thread(new Runnable() {
             @Override
             public void run() {
-                WordDate wordDate=(WordDate)getIntent().getSerializableExtra("information");
+                WordDate wordDate = (WordDate) getIntent().getSerializableExtra("information");
                 sendMessage(wordDate);
             }
         }).start();
@@ -51,18 +52,18 @@ public class Word_information extends AppCompatActivity {
         findViewById(R.id.back2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it =new Intent(Word_information.this, com.hhu.ireciteword.MainActivity.class);
+                Intent it = new Intent(Word_information.this, com.hhu.ireciteword.MainActivity.class);
                 startActivity(it);
-                Toast.makeText(Word_information.this,"你进入下一个界面",Toast.LENGTH_LONG).show();
+                Toast.makeText(Word_information.this, "你进入下一个界面", Toast.LENGTH_LONG).show();
             }
         });
         //通过按钮search,跳转到查单词界面，search_word
         findViewById(R.id.search2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it =new Intent(Word_information.this,Search_word.class);
+                Intent it = new Intent(Word_information.this, Search_word.class);
                 startActivity(it);
-                Toast.makeText(Word_information.this,"你进入下一个界面",Toast.LENGTH_LONG).show();
+                Toast.makeText(Word_information.this, "你进入下一个界面", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -73,28 +74,31 @@ public class Word_information extends AppCompatActivity {
                 Intent it;
                 SharedPreferences myPreference = getSharedPreferences("iReciteWord", MODE_PRIVATE);
                 //TODO 查询下一个单词并发送到背单词Activity，计数并与目标比较
-                if(MyApp.cur<=10)
-                {
+                if (MyApp.cur <= 10) {
                     MyApp.cur++;
-                    Cet4Dao cet4Dao=getCet4DaoInstance();
-                    List<Cet4> list=cet4Dao.randomQuery(1);
-                    it=new Intent(Word_information.this, Word_recite1.class);
-                    it.putExtra("wordList", list.get(0));
+                    Cet4Dao cet4Dao = getCet4DaoInstance();
+                    List<Cet4> list = cet4Dao.randomQuery(1);
+                    it = new Intent(Word_information.this, Word_recite1.class);
+                    Cet4 cet4 = list.get(0);
+                    WordDate wordDate = new WordDate();
+                    wordDate.setWord(cet4.getWord());
+                    wordDate.setPhonetic(cet4.getPhonogram());
+                    wordDate.setExample(cet4.getExample());
+                    it.putExtra("wordList", (Serializable) wordDate);
                     startActivity(it);
-                }
-                else {
-                    MyApp.cur=0;
-                    it=new Intent(Word_information.this,MainActivity.class);
+                } else {
+                    MyApp.cur = 0;
+                    it = new Intent(Word_information.this, MainActivity.class);
                     startActivity(it);
                 }
             }
         });
     }
 
-    private void initView(){
-        wordView=findViewById(R.id.word);
-        phoneticView=findViewById(R.id.phoneticView);
-        exampleView=findViewById(R.id.exampleView);
+    private void initView() {
+        wordView = findViewById(R.id.word);
+        phoneticView = findViewById(R.id.phoneticView);
+        exampleView = findViewById(R.id.exampleView);
     }
 
     @SuppressLint("HandlerLeak")
@@ -102,16 +106,15 @@ public class Word_information extends AppCompatActivity {
         @Override
         public void handleMessage(Message msg) {
             WordDate wordDate = (WordDate) msg.obj;
-            Log.i("word",wordDate.word);
-            wordView.setText(wordDate.word);
-            phoneticView.setText(wordDate.phonetic);
-            exampleView.setText(wordDate.example);
+            wordView.setText(wordDate.getWord());
+            phoneticView.setText(wordDate.getPhonetic());
+            exampleView.setText(wordDate.getExample());
         }
     };
 
     private void sendMessage(WordDate wordDate) {
-        Message msg=new Message();
-        msg.obj=wordDate;
+        Message msg = new Message();
+        msg.obj = wordDate;
         handler.sendMessage(msg);
     }
 }

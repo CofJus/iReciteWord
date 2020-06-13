@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.hhu.ireciteword.data.WordDate;
 import com.hhu.ireciteword.data.dao.Cet4Dao;
 import com.hhu.ireciteword.data.dao.Cet6Dao;
 import com.hhu.ireciteword.data.vo.Cet4;
@@ -138,7 +139,12 @@ public class MainActivity extends AppCompatActivity {
                             if (CET4.equals(wordBook)) {
                                 Cet4Dao cet4Dao = getCet4DaoInstance();
                                 List<Cet4> list = cet4Dao.randomQuery(1);
-                                it.putExtra("wordList",(Serializable) list.get(0));
+                                Cet4 cet4=list.get(0);
+                                WordDate wordDate = new WordDate();
+                                wordDate.setWord(cet4.getWord());
+                                wordDate.setPhonetic(cet4.getPhonogram());
+                                wordDate.setExample(cet4.getExample());
+                                it.putExtra("wordList",(Serializable)wordDate);
                                 MyApp.cur++;
                             } else if (CET6.equals(wordBook)) {
                                 Cet6Dao cet6Dao = getCet6DaoInstance();

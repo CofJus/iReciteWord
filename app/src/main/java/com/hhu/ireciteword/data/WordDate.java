@@ -7,17 +7,31 @@ import java.io.Serializable;
  */
 
 public class WordDate implements Serializable {
-    public String word;
-    public String phonetic;
+    private String word;
+    private String phonetic;
+    private String example;
+
+    public String getWord() {
+        return word;
+    }
+
+    public void setWord(String word) {
+        this.word = word;
+    }
+
+    public String getPhonetic() {
+        return phonetic;
+    }
+
+    public void setPhonetic(String phonetic) {
+        this.phonetic = phonetic;
+    }
+
+    public String getExample() {
+        return example;
+    }
 
     public void setExample(String example) {
         this.example = example;
-    }
-
-    public String example;
-
-    public WordDate(String word, String phonetic) {
-        this.word = word;
-        this.phonetic = phonetic;
     }
 }
