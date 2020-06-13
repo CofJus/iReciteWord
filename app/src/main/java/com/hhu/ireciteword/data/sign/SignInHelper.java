@@ -17,6 +17,7 @@ public class SignInHelper {
     private static final String TAG = "SignInHelper--->>>";
 
     private SQLiteDatabase db;
+    final String QUERY_DAYS = "SELECT COUNT(*) FROM signIn WHERE ;";
 
     public SignInHelper(Context context) {
         db = new LocalDbOpenHelper(context).getReadableDatabase();
@@ -42,5 +43,4 @@ public class SignInHelper {
         cursor.close();
         return result;
     }
-
 }

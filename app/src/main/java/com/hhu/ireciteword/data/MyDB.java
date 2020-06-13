@@ -19,7 +19,7 @@ public class MyDB extends SQLiteOpenHelper {
 
 
     public MyDB(Context context) {
-        super(context, "test.db", null, 1);
+        super(context, "vocabulary  .db", null, 1);
     }
 
     @Override

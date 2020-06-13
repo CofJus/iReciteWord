@@ -11,10 +11,10 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.hhu.ireciteword.MainActivity;
 import com.hhu.ireciteword.R;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Created by 吕志鹏
@@ -56,6 +56,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         BTRegister.setOnClickListener(this);
     }
 
+    @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_registeractivity_back: //返回登录页面
@@ -86,6 +87,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     Toast.makeText(this, "未完善信息，注册失败", Toast.LENGTH_SHORT).show();
                 }
                 break;
+            default:break;
         }
     }
 }

@@ -24,7 +24,6 @@ import com.hhu.ireciteword.Dateutil.DateFormatType;
 import com.hhu.ireciteword.data.MyDB;
 import com.hhu.ireciteword.data.vo.Record;
 
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -39,8 +38,6 @@ import static com.hhu.ireciteword.Dateutil.MyFormat.myDateFormat;
  */
 public class NoteMainActivity extends BaseActivity implements View.OnClickListener,
         AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener{
-
-    private final static String TAG = "MainActivity";
 
     MyDB myDB;
     private ListView myListView;

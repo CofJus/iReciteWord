@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.hhu.ireciteword.data.WordDate;
 import com.hhu.ireciteword.data.dao.Cet4Dao;
 import com.hhu.ireciteword.data.dao.Cet6Dao;
 import com.hhu.ireciteword.data.vo.Cet4;
@@ -22,7 +23,6 @@ import com.hhu.ireciteword.ui.Dakachallenge_back;
 import com.hhu.ireciteword.ui.HeaderActivity;
 import com.hhu.ireciteword.ui.HelpActivity;
 import com.hhu.ireciteword.ui.LearningSpeedActivity;
-
 import com.hhu.ireciteword.ui.LockScreenWordsActivity;
 import com.hhu.ireciteword.ui.MyPagerAdapter;
 import com.hhu.ireciteword.ui.SentenceActivity;
@@ -125,7 +125,6 @@ public class MainActivity extends AppCompatActivity {
                             Intent it = new Intent(MainActivity.this, NoteMainActivity.class);
                             startActivity(it);
                             Toast.makeText(MainActivity.this, "进入单词界面", Toast.LENGTH_LONG).show();
-
                         }
                     });
                     //开始背单词
@@ -137,15 +136,19 @@ public class MainActivity extends AppCompatActivity {
                             Intent it = new Intent(MainActivity.this, Word_recite1.class);
                             SharedPreferences myPreference = getSharedPreferences("preference", MODE_PRIVATE);
                             String wordBook = myPreference.getString("book", "");
-                            int target = 10;
-                            //int target=myPreference.getInt("target", 0);
                             if (CET4.equals(wordBook)) {
                                 Cet4Dao cet4Dao = getCet4DaoInstance();
-                                List<Cet4> list = cet4Dao.randomQuery(target);
-                                it.putExtra("wordList",(Serializable) list);
+                                List<Cet4> list = cet4Dao.randomQuery(1);
+                                Cet4 cet4=list.get(0);
+                                WordDate wordDate = new WordDate();
+                                wordDate.setWord(cet4.getWord());
+                                wordDate.setPhonetic(cet4.getPhonogram());
+                                wordDate.setExample(cet4.getExample());
+                                it.putExtra("wordList",(Serializable)wordDate);
+                                MyApp.cur++;
                             } else if (CET6.equals(wordBook)) {
                                 Cet6Dao cet6Dao = getCet6DaoInstance();
-                                List<Cet6> list = cet6Dao.randomQuery(target);
+                                List<Cet6> list = cet6Dao.randomQuery(1);
                                 it.putExtra("wordList",(Serializable) list);
                             }
                             startActivity(it);

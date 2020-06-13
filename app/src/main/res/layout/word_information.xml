@@ -30,16 +30,16 @@
         android:progress="0"
         android:secondaryProgress="0"/>
     <TextView
+        android:id="@+id/word"
         android:layout_weight="1.5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="moral"
         android:textSize="43dp"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:layout_marginLeft="10dp"/>
     <TextView
-        android:id="@+id/word"
+        android:id="@+id/phoneticView"
         android:layout_weight="0.5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -61,20 +61,14 @@
         android:textColor="@color/color1"
         android:textSize="20sp"/>
     <TextView
+        android:id="@+id/exampleView"
         android:layout_weight="0.5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:text="They have no marals."
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"/>
-    <TextView
-        android:layout_weight="0.5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="他们没有道德。"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="10dp"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="5dp"

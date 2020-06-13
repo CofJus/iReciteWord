@@ -27,8 +27,6 @@ import java.util.Calendar;
  */
 public class SignActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity--->>>";
-
     private SignView signDate;
 
     private TextView tvYear;

@@ -129,7 +129,20 @@
             android:textColor="@color/color2"
             android:textSize="26dp" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:gravity="center"
+            android:text="根据例句，判断释义" />
 
+        <TextView
+            android:id="@+id/phoneticText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textColor="@color/black" />
     </LinearLayout>
 
     <LinearLayout
