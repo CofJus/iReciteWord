@@ -22,7 +22,6 @@ import com.hhu.ireciteword.ui.Dakachallenge_back;
 import com.hhu.ireciteword.ui.HeaderActivity;
 import com.hhu.ireciteword.ui.HelpActivity;
 import com.hhu.ireciteword.ui.LearningSpeedActivity;
-
 import com.hhu.ireciteword.ui.LockScreenWordsActivity;
 import com.hhu.ireciteword.ui.MyPagerAdapter;
 import com.hhu.ireciteword.ui.SentenceActivity;
@@ -137,15 +136,14 @@ public class MainActivity extends AppCompatActivity {
                             Intent it = new Intent(MainActivity.this, Word_recite1.class);
                             SharedPreferences myPreference = getSharedPreferences("preference", MODE_PRIVATE);
                             String wordBook = myPreference.getString("book", "");
-                            int target = 10;
-                            //int target=myPreference.getInt("target", 0);
                             if (CET4.equals(wordBook)) {
                                 Cet4Dao cet4Dao = getCet4DaoInstance();
-                                List<Cet4> list = cet4Dao.randomQuery(target);
-                                it.putExtra("wordList",(Serializable) list);
+                                List<Cet4> list = cet4Dao.randomQuery(1);
+                                it.putExtra("wordList",(Serializable) list.get(0));
+                                MyApp.cur++;
                             } else if (CET6.equals(wordBook)) {
                                 Cet6Dao cet6Dao = getCet6DaoInstance();
-                                List<Cet6> list = cet6Dao.randomQuery(target);
+                                List<Cet6> list = cet6Dao.randomQuery(1);
                                 it.putExtra("wordList",(Serializable) list);
                             }
                             startActivity(it);

@@ -16,6 +16,8 @@ import java.io.OutputStream;
 
 public class MyApp extends Application {
 
+    public static int cur = 0;
+
     @Override
     public void onCreate() {
         super.onCreate();

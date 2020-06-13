@@ -22,7 +22,7 @@ import com.hhu.ireciteword.R;
 import com.hhu.ireciteword.data.WordDate;
 import com.hhu.ireciteword.data.vo.Cet4;
 
-import java.util.List;
+import java.io.Serializable;
 
 public class Word_recite1 extends AppCompatActivity {
 
@@ -33,11 +33,15 @@ public class Word_recite1 extends AppCompatActivity {
 
     TextView mLabel;
     TextView mLabel2;
+    TextView phoneticText;
 
     ImageButton btnBack;
     ImageButton btnSearch;
     Button btnRemember1;
     Button btnForget1;
+
+    Cet4 word;
+    WordDate wordDate;
 
     @Override
     @SuppressLint({"WrongViewCast", "HandlerLeak"})
@@ -52,8 +56,8 @@ public class Word_recite1 extends AppCompatActivity {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    List<Cet4> list = (List<Cet4>) getIntent().getSerializableExtra(WORD_LIST);
-                    WordDate wordDate = new WordDate(list.get(0).getWord(), list.get(0).getPhonogram());
+                    word = (Cet4)getIntent().getSerializableExtra(WORD_LIST);
+                    wordDate = new WordDate(word.getWord(),word.getPhonogram());
                     sendWord(wordDate);
                 }
             }).start();
@@ -82,18 +86,19 @@ public class Word_recite1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(Word_recite1.this, Word_information.class);
+                wordDate.setExample(word.getExample());
+                it.putExtra("information", (Serializable)wordDate);
                 startActivity(it);
-                Toast.makeText(Word_recite1.this, "你进入下一个界面", Toast.LENGTH_LONG).show();
             }
         });
 
-        //通过按钮forget1，跳转到下一个提示word_recite2
         btnForget1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(Word_recite1.this, Word_recite2.class);
-                startActivity(it);
-                Toast.makeText(Word_recite1.this, "你进入提示界面", Toast.LENGTH_LONG).show();
+                wordDate.setExample(word.getExample());
+                Message msg=new Message();
+                msg.obj=wordDate;
+                handler.sendMessage(msg);
             }
         });
     }
@@ -101,6 +106,7 @@ public class Word_recite1 extends AppCompatActivity {
     private void initView() {
         mLabel = (TextView) findViewById(R.id.wordview);
         mLabel2 = (TextView) findViewById(R.id.phonetic_sign);
+        phoneticText = (TextView) findViewById((R.id.phoneticText));
 
         btnBack = (ImageButton) findViewById(R.id.back1);
         btnSearch = (ImageButton) findViewById(R.id.search);
@@ -115,6 +121,7 @@ public class Word_recite1 extends AppCompatActivity {
             WordDate wordDate = (WordDate) msg.obj;
             mLabel.setText(wordDate.word);
             mLabel2.setText(wordDate.phonetic);
+            phoneticText.setText(wordDate.example);
         }
     };
 
