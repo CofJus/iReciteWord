@@ -92,14 +92,14 @@ public class StudySettingActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        //将保存的数据转化为整型，默认50和20
-        int num1 = Integer.parseInt((String) get(StudySettingActivity.this, "num1", "50")) ;
-        int num2 = Integer.parseInt((String) get(StudySettingActivity.this, "num2", "20"));
+        //将保存的数据转化为整型，默认50和20个
+        int studyWordChange = Integer.parseInt((String) get(StudySettingActivity.this, "num1", "50")) ;
+        int reviewWordChange = Integer.parseInt((String) get(StudySettingActivity.this, "num2", "20"));
 //        String num1 = (String) get(this, "num1", "");
 //        String num2 = (String) get(this, "num2", "");
 
-        review_word.setText(num2+"");
-        study_word.setText(num1+"");
+        review_word.setText(reviewWordChange+"");
+        study_word.setText(studyWordChange+"");
 
     }
 
