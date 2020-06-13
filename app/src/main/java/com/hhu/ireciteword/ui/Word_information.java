@@ -16,8 +16,16 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.hhu.ireciteword.MainActivity;
+import com.hhu.ireciteword.MyApp;
 import com.hhu.ireciteword.R;
 import com.hhu.ireciteword.data.WordDate;
+import com.hhu.ireciteword.data.dao.Cet4Dao;
+import com.hhu.ireciteword.data.vo.Cet4;
+
+import java.util.List;
+
+import static com.hhu.ireciteword.data.DaoFactory.getCet4DaoInstance;
 
 //活动：单词详情页
 public class Word_information extends AppCompatActivity {
@@ -62,11 +70,23 @@ public class Word_information extends AppCompatActivity {
         findViewById(R.id.next).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it =new Intent(Word_information.this, Word_recite1.class);
+                Intent it;
                 SharedPreferences myPreference = getSharedPreferences("iReciteWord", MODE_PRIVATE);
                 //TODO 查询下一个单词并发送到背单词Activity，计数并与目标比较
-                startActivity(it);
-                Toast.makeText(Word_information.this,"你进入下一个界面",Toast.LENGTH_LONG).show();
+                if(MyApp.cur<=10)
+                {
+                    MyApp.cur++;
+                    Cet4Dao cet4Dao=getCet4DaoInstance();
+                    List<Cet4> list=cet4Dao.randomQuery(1);
+                    it=new Intent(Word_information.this, Word_recite1.class);
+                    it.putExtra("wordList", list.get(0));
+                    startActivity(it);
+                }
+                else {
+                    MyApp.cur=0;
+                    it=new Intent(Word_information.this,MainActivity.class);
+                    startActivity(it);
+                }
             }
         });
     }

@@ -124,7 +124,6 @@ public class MainActivity extends AppCompatActivity {
                             Intent it = new Intent(MainActivity.this, NoteMainActivity.class);
                             startActivity(it);
                             Toast.makeText(MainActivity.this, "进入单词界面", Toast.LENGTH_LONG).show();
-
                         }
                     });
                     //开始背单词
