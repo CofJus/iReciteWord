@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,13 +51,17 @@ public class StudySettingActivity extends AppCompatActivity {
             }
         });
 
-        study_word=findViewById(R.id.ed_1);
-        review_word=findViewById(R.id.et_2);
+        study_word=(LastInputEditText) findViewById(R.id.ed_1);
+        review_word=(LastInputEditText) findViewById(R.id.et_2);
+
+
 
         //监听器
         study_word.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+
                 //获取EditText数字
                 int number1 = Integer.parseInt(study_word.getText().toString());
                 //保存当前选择 EditTExt id
@@ -64,6 +71,7 @@ public class StudySettingActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"每日新学单词:"+study_word.getText().toString()+"个",Toast.LENGTH_LONG).show();
                 return false;
             }
+
         });
 
         review_word.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -84,11 +92,14 @@ public class StudySettingActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        //get:获取保存的EditText id  直接选中保存的id
-        String num1 = (String) get(this, "num1", "");
-        String num2 = (String) get(this, "num2", "");
-        review_word.setText(num2+"");
-        study_word.setText(num1+"");
+        //将保存的数据转化为整型，默认单词数量为50和20个
+        int studyWordChange = Integer.parseInt((String) get(StudySettingActivity.this, "num1", "50")) ;
+        int reviewWordChange = Integer.parseInt((String) get(StudySettingActivity.this, "num2", "20"));
+//        String num1 = (String) get(this, "num1", "");
+//        String num2 = (String) get(this, "num2", "");
+
+        review_word.setText(reviewWordChange+"");
+        study_word.setText(studyWordChange+"");
 
     }
 
