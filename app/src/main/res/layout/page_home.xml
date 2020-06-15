@@ -23,23 +23,18 @@
 
 
     <TextView
-        android:id="@+id/tv_book"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_below="@+id/calendar"
-        android:layout_margin="10dp"
-        android:background="@drawable/shape_home_btn1" />
-
-    <TextView
         android:id="@+id/tv_assignment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_book"
-        android:layout_margin="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
 
+        android:layout_marginTop="261dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
         android:text="-今日任务-"
         android:textSize="20sp" />
 

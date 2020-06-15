@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -71,30 +69,6 @@
             android:textColor="#fff"
             android:textSize="25sp" />
     </LinearLayout>
-    <TextView
-        android:id="@+id/说明1"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="405dp"
-        android:text="@string/每日一句"
-        android:textSize="28sp"
-        android:textColor="#000"
-        android:gravity="start"
-        android:textAlignment="textStart">
-    </TextView>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="95dp"
-        android:layout_below="@+id/说明1"
-        android:textSize="25sp"
-        android:text="i think it is the books thar you read when you are yong that live with you forever"
-        android:textAlignment="textStart"
-        android:gravity="start">
-
-    </TextView>
-
-
 
 
 </RelativeLayout>
