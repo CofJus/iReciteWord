@@ -8,10 +8,12 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,13 +21,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.hhu.ireciteword.R;
 import com.hhu.ireciteword.data.WordDate;
+import com.hhu.ireciteword.data.vo.LookUpResult;
+import com.hhu.ireciteword.httpservice.translate.Translate;
 
 import java.io.Serializable;
+
+import static com.hhu.ireciteword.utils.VoicePlayer.playVoice;
 
 public class Word_recite1 extends AppCompatActivity {
 
     private boolean flag = true;
-
     private static final String WORD_LIST = "wordList";
 
     TextView mLabel;
@@ -34,6 +39,7 @@ public class Word_recite1 extends AppCompatActivity {
 
     ImageButton btnBack;
     ImageButton btnSearch;
+    ImageView voice;
     Button btnRemember1;
     Button btnForget1;
 
@@ -50,11 +56,31 @@ public class Word_recite1 extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                Looper.prepare();
                 wordDate = (WordDate) getIntent().getSerializableExtra(WORD_LIST);
+                Translate translate = new Translate();
+                //包含了所有查询得到的信息
+                LookUpResult lookUpResult = translate.getResult(wordDate.getWord(), "");
+                //将http链接转换为https
+                lookUpResult.setVoiceUrl("https" + lookUpResult.getVoiceUrl().substring(4));
+                wordDate.setUrl(lookUpResult.getVoiceUrl());
                 sendWord(wordDate);
             }
         }).start();
 
+        voice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Looper.prepare();
+                        //播放音频
+                        playVoice(wordDate.getUrl());
+                    }
+                }).start();
+            }
+        });
         //通过按钮back1，跳转到上一个页面，主界面page_main
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,6 +127,7 @@ public class Word_recite1 extends AppCompatActivity {
 
         btnBack = (ImageButton) findViewById(R.id.back1);
         btnSearch = (ImageButton) findViewById(R.id.search);
+        voice = findViewById(R.id.audio);
         btnRemember1 = (Button) findViewById(R.id.remember1);
         btnForget1 = (Button) findViewById(R.id.forget1);
     }
@@ -114,6 +141,7 @@ public class Word_recite1 extends AppCompatActivity {
             mLabel2.setText(wordDate.getPhonetic());
             if (!flag) {
                 phoneticText.setText(wordDate.getExample());
+                btnForget1.setText("没想起来");
             }
         }
     };

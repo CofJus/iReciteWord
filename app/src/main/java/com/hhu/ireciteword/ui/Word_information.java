@@ -8,8 +8,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +28,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import static com.hhu.ireciteword.data.DaoFactory.getCet4DaoInstance;
+import static com.hhu.ireciteword.utils.VoicePlayer.playVoice;
 
 //活动：单词详情页
 public class Word_information extends AppCompatActivity {
@@ -33,6 +36,9 @@ public class Word_information extends AppCompatActivity {
     TextView wordView;
     TextView phoneticView;
     TextView exampleView;
+    ImageView voice;
+
+    WordDate wordDate;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,11 +50,23 @@ public class Word_information extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                WordDate wordDate = (WordDate) getIntent().getSerializableExtra("information");
+                wordDate = (WordDate) getIntent().getSerializableExtra("information");
                 sendMessage(wordDate);
             }
         }).start();
 
+        voice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Looper.prepare();
+                        playVoice(wordDate.getUrl());
+                    }
+                }).start();
+            }
+        });
         findViewById(R.id.back2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,11 +97,7 @@ public class Word_information extends AppCompatActivity {
                     Cet4Dao cet4Dao = getCet4DaoInstance();
                     List<Cet4> list = cet4Dao.randomQuery(1);
                     it = new Intent(Word_information.this, Word_recite1.class);
-                    Cet4 cet4 = list.get(0);
-                    WordDate wordDate = new WordDate();
-                    wordDate.setWord(cet4.getWord());
-                    wordDate.setPhonetic(cet4.getPhonogram());
-                    wordDate.setExample(cet4.getExample());
+                    WordDate wordDate = new WordDate(list.get(0));
                     it.putExtra("wordList", (Serializable) wordDate);
                     startActivity(it);
                 } else {
@@ -99,6 +113,7 @@ public class Word_information extends AppCompatActivity {
         wordView = findViewById(R.id.word);
         phoneticView = findViewById(R.id.phoneticView);
         exampleView = findViewById(R.id.exampleView);
+        voice = findViewById(R.id.audio2);
     }
 
     @SuppressLint("HandlerLeak")

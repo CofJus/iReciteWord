@@ -143,6 +143,13 @@
             android:layout_marginTop="5dp"
             android:gravity="center"
             android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/audio"
+            android:layout_width="90dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/audio"/>
     </LinearLayout>
 
     <LinearLayout

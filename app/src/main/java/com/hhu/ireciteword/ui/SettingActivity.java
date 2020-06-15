@@ -10,10 +10,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.hhu.ireciteword.R;
-import com.hhu.ireciteword.data.dao.RecordDao;
-import com.hhu.ireciteword.data.vo.Record;
-
-import static com.hhu.ireciteword.data.DaoFactory.getRecordDaoInstance;
 
 /**
  * 设置 Activity
@@ -55,18 +51,6 @@ public class SettingActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        findViewById(R.id.btnStartSentece).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Record record = new Record();
-                record.setTitleName("example");
-                record.setTextBody("例子，example");
-                RecordDao recordDao=getRecordDaoInstance();
-                recordDao.insert(record);
-            }
-        });
-
         //待新建
         llOthersetting = findViewById(R.id.ll_other_setting);
     }

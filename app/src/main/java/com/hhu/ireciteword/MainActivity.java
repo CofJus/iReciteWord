@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
 
         Toast.makeText(MainActivity.this, "目前在主活动中", Toast.LENGTH_LONG).show();
 
-
         //Initialise Views
         viewPager = (ViewPager) findViewById(R.id.main_vp);
         radioGroup = (RadioGroup) findViewById(R.id.main_rg);
@@ -139,11 +138,7 @@ public class MainActivity extends AppCompatActivity {
                             if (CET4.equals(wordBook)) {
                                 Cet4Dao cet4Dao = getCet4DaoInstance();
                                 List<Cet4> list = cet4Dao.randomQuery(1);
-                                Cet4 cet4=list.get(0);
-                                WordDate wordDate = new WordDate();
-                                wordDate.setWord(cet4.getWord());
-                                wordDate.setPhonetic(cet4.getPhonogram());
-                                wordDate.setExample(cet4.getExample());
+                                WordDate wordDate = new WordDate(list.get(0));
                                 it.putExtra("wordList",(Serializable)wordDate);
                                 MyApp.cur++;
                             } else if (CET6.equals(wordBook)) {

@@ -38,6 +38,12 @@
         android:textStyle="bold"
         android:textColor="@color/black"
         android:layout_marginLeft="10dp"/>
+    <ImageView
+        android:id="@+id/audio2"
+        android:layout_width="64dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center"
+        android:src="@mipmap/audio" />
     <TextView
         android:id="@+id/phoneticView"
         android:layout_weight="0.5"
