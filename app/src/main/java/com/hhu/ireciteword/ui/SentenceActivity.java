@@ -37,8 +37,7 @@ import static com.hhu.ireciteword.utils.VoicePlayer.playVoice;
 
 public class SentenceActivity extends AppCompatActivity {
     ImageView imgView;
-    TextView textEnglish;
-    TextView textChinese;
+
     Button buttonVoice;
 
     @Override
@@ -53,8 +52,7 @@ public class SentenceActivity extends AppCompatActivity {
                 final Sentence st = new Sentence();
                 try {
                     downloadPicture(st.getImg());
-                    textChinese.setText(st.getChinese());
-                    textEnglish.setText(st.getEnglish());
+
                     buttonVoice.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -75,8 +73,7 @@ public class SentenceActivity extends AppCompatActivity {
 
     private void initView() {
         imgView = findViewById(R.id.imgViewOkhttp);
-        textChinese = findViewById(R.id.Chinese);
-        textEnglish = findViewById(R.id.English);
+
         buttonVoice = findViewById(R.id.Voice);
     }
 
