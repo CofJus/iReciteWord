@@ -31,6 +31,9 @@
         <activity android:name=".ui.Challengethree_back"/>
         <activity android:name=".ui.loginActivity"/>
         <activity android:name=".ui.RegisterActivity"/>
+        <activity android:name=".ui.SearchWordInformation"/>
+
+
         <activity android:name=".ui.User"
             tools:ignore="Instantiatable" />
         <activity android:name=".ui.DBOpenHelper"
@@ -46,6 +49,8 @@
         <activity android:name=".AmendActivity"/>
         <activity android:name=".NoteMainActivity"/>
         <activity android:name=".ui.SignActivity"/>
+
+
 
 
     </application>

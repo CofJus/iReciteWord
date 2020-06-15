@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Created by 顾将赢 on 2020.4.16-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
@@ -21,7 +22,18 @@
         android:layout_below="@id/tv_hello"
         android:background="#cccccc"/>
 
-
+    <Button
+        android:id="@+id/search_word"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+        android:layout_below="@id/v_1"
+        android:layout_alignBottom="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-41dp"
+        android:background="#fff"
+        android:gravity="center_horizontal"
+        android:text="单词查询"
+        android:textSize="15sp" />
     <TextView
         android:id="@+id/tv_assignment"
         android:layout_width="match_parent"
@@ -116,6 +128,7 @@
         android:background="#fff"
         android:text="打卡日历"
         android:textSize="15sp" />
+
     <Button
         android:id="@+id/button_wordlist"
         android:layout_width="wrap_content"
@@ -125,6 +138,5 @@
         android:background="#fff"
         android:layout_marginLeft="10dp"
         android:textSize="15sp"/>
-
 
 </RelativeLayout>

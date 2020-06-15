@@ -7,15 +7,21 @@
     android:background="@color/white">
 
     <ImageButton
-
         android:id="@+id/back3"
         android:layout_width="67dp"
         android:layout_height="55dp"
         android:src="@mipmap/arrowback" />
 
     <EditText
-        android:layout_width="345dp"
+        android:id="@+id/wordInput"
+        android:layout_width="268dp"
         android:layout_height="59dp"
         android:hint="请输入英文或中文" />
+
+    <ImageButton
+        android:id="@+id/search_word"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:src="@mipmap/search" />
 
 </LinearLayout>
