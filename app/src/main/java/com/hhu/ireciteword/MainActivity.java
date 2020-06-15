@@ -25,6 +25,7 @@ import com.hhu.ireciteword.ui.HelpActivity;
 import com.hhu.ireciteword.ui.LearningSpeedActivity;
 import com.hhu.ireciteword.ui.LockScreenWordsActivity;
 import com.hhu.ireciteword.ui.MyPagerAdapter;
+import com.hhu.ireciteword.ui.Search_word;
 import com.hhu.ireciteword.ui.SentenceActivity;
 import com.hhu.ireciteword.ui.SettingActivity;
 import com.hhu.ireciteword.ui.SignActivity;
@@ -158,6 +159,16 @@ public class MainActivity extends AppCompatActivity {
                             Intent it = new Intent(MainActivity.this, SignActivity.class);
                             startActivity(it);
                             Toast.makeText(MainActivity.this, "进入打卡日历", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                    //查单词
+                    Button btnSearch = (Button)findViewById(R.id.search_word);
+                    btnSearch.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent it = new Intent(MainActivity.this, Search_word.class);
+                            startActivity(it);
+                            Toast.makeText(MainActivity.this, "进入查单词", Toast.LENGTH_LONG).show();
                         }
                     });
                 }
