@@ -24,11 +24,8 @@
         <activity android:name=".ui.HeaderActivity" />
         <activity android:name=".ui.Word_recite1"/>
         <activity android:name=".ui.Word_information"/>
-        <activity android:name=".ui.Search_word"/>
+        <activity android:name=".ui.SearchWord"/>
         <activity android:name=".ui.Dakachallenge_back"/>
-        <activity android:name=".ui.Challengeone_back"/>
-        <activity android:name=".ui.Challengetwo_back"/>
-        <activity android:name=".ui.Challengethree_back"/>
         <activity android:name=".ui.loginActivity"/>
         <activity android:name=".ui.RegisterActivity"/>
         <activity android:name=".ui.SearchWordInformation"/>
@@ -45,9 +42,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EditActivity"/>
-        <activity android:name=".AmendActivity"/>
-        <activity android:name=".NoteMainActivity"/>
+        <activity android:name=".ui.EditActivity"/>
+        <activity android:name=".ui.AmendActivity"/>
+        <activity android:name=".ui.NoteMainActivity"/>
         <activity android:name=".ui.SignActivity"/>
 
 

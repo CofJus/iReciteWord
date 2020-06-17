@@ -1,4 +1,4 @@
-package com.hhu.ireciteword;
+package com.hhu.ireciteword.ui;
 
 
 import android.annotation.SuppressLint;
@@ -21,6 +21,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 
 import com.hhu.ireciteword.Dateutil.DateFormatType;
+import com.hhu.ireciteword.R;
 import com.hhu.ireciteword.data.MyDB;
 import com.hhu.ireciteword.data.vo.Record;
 

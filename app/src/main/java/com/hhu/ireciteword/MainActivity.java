@@ -25,7 +25,8 @@ import com.hhu.ireciteword.ui.HelpActivity;
 import com.hhu.ireciteword.ui.LearningSpeedActivity;
 import com.hhu.ireciteword.ui.LockScreenWordsActivity;
 import com.hhu.ireciteword.ui.MyPagerAdapter;
-import com.hhu.ireciteword.ui.Search_word;
+import com.hhu.ireciteword.ui.NoteMainActivity;
+import com.hhu.ireciteword.ui.SearchWord;
 import com.hhu.ireciteword.ui.SentenceActivity;
 import com.hhu.ireciteword.ui.SettingActivity;
 import com.hhu.ireciteword.ui.SignActivity;
@@ -166,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
                     btnSearch.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent it = new Intent(MainActivity.this, Search_word.class);
+                            Intent it = new Intent(MainActivity.this, SearchWord.class);
                             startActivity(it);
                             Toast.makeText(MainActivity.this, "进入查单词", Toast.LENGTH_LONG).show();
                         }

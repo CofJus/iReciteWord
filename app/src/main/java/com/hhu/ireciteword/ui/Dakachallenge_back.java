@@ -2,10 +2,10 @@ package com.hhu.ireciteword.ui;
 /*
  * Created by 张佳豪 on 4.18
  */
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -31,15 +31,7 @@ public class Dakachallenge_back extends AppCompatActivity {
         });
 
 
-         Button tochallengeone =(Button) findViewById(R.id.打卡挑战一);
-        tochallengeone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent it =new Intent(Dakachallenge_back.this, Challengeone_back.class);
-                startActivity(it);
-                Toast.makeText(Dakachallenge_back.this,"你进入打卡挑战一",Toast.LENGTH_LONG).show();
-            }
-        });
+
 
 
 

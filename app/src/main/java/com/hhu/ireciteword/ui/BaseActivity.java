@@ -1,4 +1,4 @@
-package com.hhu.ireciteword;
+package com.hhu.ireciteword.ui;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;

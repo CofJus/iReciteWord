@@ -34,9 +34,7 @@ public class MyApp extends Application {
     }
 
     private void copyDataBase(String dbname) throws IOException {
-        // Open your local db as the input stream
         InputStream myInput = this.getAssets().open(dbname);
-        // Path to the just created empty db
         File outFileName = this.getDatabasePath(dbname);
 
         if (!outFileName.exists()) {

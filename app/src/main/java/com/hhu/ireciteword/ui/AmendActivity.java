@@ -1,4 +1,4 @@
-package com.hhu.ireciteword;
+package com.hhu.ireciteword.ui;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
+import com.hhu.ireciteword.R;
 import com.hhu.ireciteword.data.MyDB;
 import com.hhu.ireciteword.data.vo.Record;
 

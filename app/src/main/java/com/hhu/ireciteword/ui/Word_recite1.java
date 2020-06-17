@@ -93,7 +93,7 @@ public class Word_recite1 extends AppCompatActivity {
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(Word_recite1.this, Search_word.class);
+                Intent it = new Intent(Word_recite1.this, SearchWord.class);
                 startActivity(it);
                 Toast.makeText(Word_recite1.this, "你进入下一个界面", Toast.LENGTH_LONG).show();
             }

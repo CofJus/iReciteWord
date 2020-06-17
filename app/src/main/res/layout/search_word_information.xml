@@ -22,7 +22,7 @@
             android:src="@mipmap/search" />
     </RelativeLayout>
     <TextView
-        android:id="@+id/word"
+        android:id="@+id/word2"
         android:text="word"
         android:layout_weight="1.5"
         android:layout_width="match_parent"
@@ -32,13 +32,13 @@
         android:textColor="@color/black"
         android:layout_marginLeft="10dp"/>
     <ImageView
-        android:id="@+id/audio2"
+        android:id="@+id/audio3"
         android:layout_width="64dp"
         android:layout_height="42dp"
         android:layout_gravity="center"
         android:src="@mipmap/audio" />
     <TextView
-        android:id="@+id/phoneticView"
+        android:id="@+id/phoneticView2"
         android:layout_weight="0.5"
         android:text="word"
         android:layout_width="match_parent"
@@ -61,7 +61,7 @@
         android:textColor="@color/color1"
         android:textSize="20sp"/>
     <TextView
-        android:id="@+id/exampleView"
+        android:id="@+id/exampleView2"
         android:layout_weight="0.5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

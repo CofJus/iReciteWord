@@ -2,6 +2,7 @@ package com.hhu.ireciteword.data.dao.impl;
 
 import com.hhu.ireciteword.data.dao.LookUpResultDao;
 import com.hhu.ireciteword.data.vo.LookUpResult;
+import com.hhu.ireciteword.data.vo.LookUpResult_Table;
 import com.raizlabs.android.dbflow.sql.language.OrderBy;
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 
@@ -29,10 +30,16 @@ public class LookUpResultDaoImpl implements LookUpResultDao {
 
     @Override
     public LookUpResult queryByHistory(String word) {
-        return SQLite.select().
+        List<LookUpResult> list = SQLite.select().
                 from(LookUpResult.class).
-                //where(LookUpResult_Table.word.eq(word)).
-                queryList().get(0);
+                where(LookUpResult_Table.word.eq(word)).
+                queryList();
+        if(0<list.size()) {
+            return list.get(0);
+        }
+        else {
+            return null;
+        }
     }
 
     @Override

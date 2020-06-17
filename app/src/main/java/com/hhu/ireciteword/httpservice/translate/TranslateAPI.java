@@ -58,12 +58,11 @@ public class TranslateAPI extends AppCompatActivity {
 
     /****
      * 获取json返回的数据
-     * @return
+     * @return json数据
      * @throws NoSuchAlgorithmException
      */
-    public String Result() throws NoSuchAlgorithmException {
+    public String result() throws NoSuchAlgorithmException {
         String url=requestUrl();
-        com.hhu.ireciteword.httpservice.translate.HttpGet httpGet=new com.hhu.ireciteword.httpservice.translate.HttpGet();
         String result=get(url,null);
         assert result != null;
         Log.d("获取结果：",result);
@@ -81,8 +80,7 @@ public class TranslateAPI extends AppCompatActivity {
 
         String sign=stringToMD5(src);
         Log.d("MD5检验：",src);
-        String requesturl=url+"q="+query+"&from="+from+"&to="+to+"&appKey="+ appId +"&salt="+salt+"&sign="+sign;
-        return requesturl;
+        return url+"q="+query+"&from="+from+"&to="+to+"&appKey="+ appId +"&salt="+salt+"&sign="+sign;
     }
 
     /***

@@ -3,45 +3,82 @@ package com.hhu.ireciteword.ui;
 /*
  * Created by 李雪滢 on 2020.4.16
  */
-import android.content.Intent;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.view.View;
-import android.widget.ImageButton;
-import android.widget.Toast;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.hhu.ireciteword.R;
-//TODO merge with TranslateActivity
-//当前处于search_word_information界面
+import com.hhu.ireciteword.data.WordDate;
+
+import static com.hhu.ireciteword.utils.VoicePlayer.playVoice;
+
 public class SearchWordInformation extends AppCompatActivity {
+
+    TextView wordView;
+    TextView phoneticView;
+    TextView exampleView;
+    ImageView voice;
+
+    WordDate wordDate;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_word_information);
 
-        //返回按钮返回主界面
-        ImageButton btnBack = (ImageButton) findViewById(R.id.back6);
-        btnBack.setOnClickListener(new View.OnClickListener() {
+        initView();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                wordDate = (WordDate) getIntent().getSerializableExtra("result");
+                sendMessage(wordDate);
+            }
+        }).start();
+
+        voice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Looper.prepare();
+                        System.out.println(wordDate.getUrl());
+                        playVoice(wordDate.getUrl());
+                    }
+                }).start();
             }
         });
+    }
 
-        //查找按钮search3继续进入查找界面
-        ImageButton btnSearch = (ImageButton)findViewById(R.id.search3);
-        btnSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent it = new Intent(SearchWordInformation.this, Search_word.class);
-                startActivity(it);
-                Toast.makeText(SearchWordInformation.this, "你进入下一个界面", Toast.LENGTH_LONG).show();
-            }
-        });
+    private void initView() {
+        wordView = findViewById(R.id.word2);
+        phoneticView = findViewById(R.id.phoneticView2);
+        exampleView = findViewById(R.id.exampleView2);
+        voice = findViewById(R.id.audio3);
+    }
 
+    @SuppressLint("HandlerLeak")
+    Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            WordDate wordDate = (WordDate) msg.obj;
+            //wordView.setText(wordDate.getWord());
+            //phoneticView.setText(wordDate.getPhonetic());
+            //exampleView.setText(wordDate.getExample());
+        }
+    };
 
-
+    private void sendMessage(WordDate wordDate) {
+        Message msg = new Message();
+        msg.obj = wordDate;
+        handler.sendMessage(msg);
     }
 }

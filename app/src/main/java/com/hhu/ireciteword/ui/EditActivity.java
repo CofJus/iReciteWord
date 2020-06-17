@@ -1,4 +1,4 @@
-package com.hhu.ireciteword;
+package com.hhu.ireciteword.ui;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -21,6 +21,7 @@ import androidx.appcompat.app.AlertDialog;
 
 import com.hhu.ireciteword.Dateutil.DateFormatType;
 import com.hhu.ireciteword.Dateutil.MyTimeGetter;
+import com.hhu.ireciteword.R;
 import com.hhu.ireciteword.data.MyDB;
 
 import java.util.Date;

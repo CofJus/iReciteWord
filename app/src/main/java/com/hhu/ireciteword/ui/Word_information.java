@@ -36,6 +36,7 @@ public class Word_information extends AppCompatActivity {
     TextView wordView;
     TextView phoneticView;
     TextView exampleView;
+    TextView meaningView;
     ImageView voice;
 
     WordDate wordDate;
@@ -79,7 +80,7 @@ public class Word_information extends AppCompatActivity {
         findViewById(R.id.search2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(Word_information.this, Search_word.class);
+                Intent it = new Intent(Word_information.this, SearchWord.class);
                 startActivity(it);
                 Toast.makeText(Word_information.this, "你进入下一个界面", Toast.LENGTH_LONG).show();
             }
@@ -113,6 +114,7 @@ public class Word_information extends AppCompatActivity {
         wordView = findViewById(R.id.word);
         phoneticView = findViewById(R.id.phoneticView);
         exampleView = findViewById(R.id.exampleView);
+        meaningView = findViewById(R.id.meaning);
         voice = findViewById(R.id.audio2);
     }
 
@@ -123,6 +125,7 @@ public class Word_information extends AppCompatActivity {
             WordDate wordDate = (WordDate) msg.obj;
             wordView.setText(wordDate.getWord());
             phoneticView.setText(wordDate.getPhonetic());
+            meaningView.setText(wordDate.getMeaning());
             exampleView.setText(wordDate.getExample());
         }
     };
